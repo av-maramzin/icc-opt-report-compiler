@@ -1,0 +1,16 @@
+\begin{thebibliography}{1}
+
+\bibitem{icc-optimization-reports}
+Intel(R).
+\newblock \uppercase{G}etting the \uppercase{M}ost out of your
+  \uppercase{Intel}(r) \uppercase{C}ompiler with the \uppercase{N}ew
+  \uppercase{O}ptimization \uppercase{R}eports.
+\newblock
+  \url{https://software.intel.com/en-us/articles/getting-the-most-out-of-your-intel-compiler-with-the-new-optimization-reports}.
+
+\bibitem{bacon}
+David~F. Bacon, Susan~L. Graham, and Oliver~J. Sharp.
+\newblock Compiler transformations for high-performance computing.
+\newblock {\em ACM Comput. Surv.}, 26(4):345--420, December 1994.
+
+\end{thebibliography}

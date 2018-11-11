@@ -1,0 +1,67 @@
+\section{Overview}
+\qquad Python package \textit{intel\_compiler} is Intel C/C++ Compiler (ICC) optimization report processor. The format and description of ICC optimization report can be found on the official Intel's website \cite{icc-optimization-reports}. The package is implemented as a simplistic compiler.  
+
+It does not strictly follow in it's internal design accepted compiler's front-end organisation practices. It performs minimal input file syntax verification and mostly relies on its strict conformance to the grammar. The package reads optimization report from the disk and transforms it into an intermediate representation of a loop nesting structure in the Python's memory. It populates built loop nesting structure with all ICC optimizations \cite{bacon} applied to given loops.    
+
+\section{Intel C/C++ Compiler (ICC) optimization report structure}
+\qquad This section roughly approximates the structure of Intel C/C++ Compiler optimization report. This approximation is presented in a form of a BNF context-free grammar. This grammar approximates only those detailes, needed for extraction and omits all unnecessary ones.   
+
+\begin{grammar}
+	
+<optimization-report> ::= <loop-report-list>
+
+<loop-report-list> ::= <loop-report> <loop-report-list> 
+\alt $\varepsilon$
+	
+<loop-report> ::= <loop-begin> <loop-partition-tag> <remark-list> <loop-report-list> <loop-end>
+
+<loop-begin> ::= `LOOP BEGIN at' <filename> `(' <line-number> `)' <inlined-into>
+
+<loop-tag> ::= <peel-mark> 
+\alt <remainder-mark>
+\alt <distributed-chunk-mark>
+\alt <distributed-chunk-remainder-mark>
+\alt $\varepsilon$
+
+<remark-list> ::= <remark> <remark-list>
+\alt $\varepsilon$
+
+<loop-end> ::= `LOOP END'
+
+<remark> ::= <loop-report> 
+\alt <unimpotant-diagnostic>
+\alt <parallel-diagnostic>
+\alt <vector-diagnostic>
+\alt <parallel-potential-diagnostic>
+\alt <vector-potential-diagnostic>
+\alt $\varepsilon$
+
+
+<peel-mark> ::= `<Peeled loop for vectorization>'
+
+<remainder-mark> ::= `<Remainder loop for vectorization>'
+
+<distributed-chunk-mark> ::= `<Distributed chunk([0-9]+)>'
+
+<distributed-chunk-remainder-mark> ::= `<Remainder loop for vectorization, Distributed chunk([0-9]+)>'
+
+<inlined-into> ::= `inlined into' <filename> `(' <line-number> `)' 	
+\alt $\varepsilon$
+	
+\end{grammar}
+
+
+\paragraph{Increase the two lengths}
+\setlength{\grammarparsep}{20pt plus 1pt minus 1pt} % increase separation between rules
+\setlength{\grammarindent}{12em} % increase separation between LHS/RHS 
+
+\begin{grammar}
+	
+	<statement> ::= <ident> `=' <expr> 
+	\alt `for' <ident> `=' <expr> `to' <expr> `do' <statement> 
+	\alt `{' <stat-list> `}' 
+	\alt <empty> 
+	
+	<stat-list> ::= <statement> `;' <stat-list> | <statement> 
+	
+\end{grammar}
