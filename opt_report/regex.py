@@ -24,7 +24,7 @@ LOOP_PARALLEL_POTENTIAL_re = re.compile("loop was not parallelized: inner loop")
 
 # [3.2] remarks identifying vectorized loops 
 LOOP_VECTOR_re = re.compile("LOOP WAS VECTORIZED")
-LOOP_VECTOR_POTENTIAL_re = re.compile(": loop was not vectorized: inner loop was already vectorized")
+LOOP_VECTOR_POTENTIAL_re = re.compile("loop was not vectorized: inner loop was already vectorized")
 
 LOOP_MAIN_re = re.compile("LOOP")
 LOOP_DISTR_re = re.compile("DISTRIBUTED LOOP")
@@ -32,16 +32,15 @@ LOOP_FUSED_re = re.compile("FUSED LOOP")
 LOOP_PARTIAL_re = re.compile("PARTIAL LOOP")
 
 # [3.3] remarks identifying dependencies present in loops 
-LOOP_PARALLEL_DEPENCENCE_re = re.compile(": loop was not parallelized: existence of parallel dependence")
-LOOP_VECTOR_DEPENDENCE_re = re.compile(": loop was not vectorized: vector dependence prevents vectorization")
+LOOP_PARALLEL_DEPENCENCE_re = re.compile("loop was not parallelized: existence of parallel dependence")
+LOOP_VECTOR_DEPENDENCE_re = re.compile("loop was not vectorized: vector dependence prevents vectorization")
 
-# [2.5] remarks identifying different sorts of applied 
-# loop optimizations
+# [3.4] Remarks identifying different sorts of applied loop transformations/optimizations
 
-# [2.5.0] (no loop optimizations reported)
-LOOP_NO_OPTIMIZATIONS_RE = re.compile("No loop optimizations reported")
-
-LOOP_FUSION_LOST_RE = re.compile("Loop lost in Fusion")
+LOOP_NO_OPTIMIZATIONS_re = re.compile("No loop optimizations reported")
+LOOP_FUSION_MAIN_re = re.compile("Fused Loops: \((.*)\)$")
+LOOP_FUSION_LOST_re = re.compile("Loop lost in Fusion")
+LOOP_DISTRIBUTION_MARK_re = re.compile("Loop Distributed \(([0-9]+) way\)")
 
 # [2.5.1] (loop-fusion)
 FUSED_LOOPS_RE = re.compile("Fused loops: \((.*)\)")

@@ -40,6 +40,9 @@ class LoopRemarkType(Enum):
     VECTOR_POTENTIAL = 4
     PARALLEL_DEPENDENCE = 5
     VECTOR_DEPENDENCE = 6
+    LOOP_FUSION_MAIN = 7
+    LOOP_FUSION_LOST = 8
+    LOOP_DISTRIBUTION_MARK = 9
 
 class LoopType(Enum):
     
@@ -76,33 +79,41 @@ class Tokeniser:
     def print_token(self, token):
 
         print("token {")
-        print(str(token.token_class))
+        print("\t" + str(token.token_class))
         if token.token_class == TokenClass.SKIP:
-            print("skip")
+            pass
         elif token.token_class == TokenClass.LOOP_REMARK:
-            print("loop remark#" + str(token.remark_num) + str(token.remark))
-            print("remark type: " + str(token.remark_type))
+            print("\t" + "loop remark #" + str(token.remark_num) + ": " + str(token.remark))
+            print("\t" + "remark type: " + str(token.remark_type))
             if token.remark_type == LoopRemarkType.PARALLEL or token.remark_type == LoopRemarkType.VECTOR:
-                print("loop type: " + str(token.loop_type))
+                print("\t" + "loop type: " + str(token.loop_type))
+            elif token.remark_type == LoopRemarkType.LOOP_FUSION_MAIN:
+                fused_list_str = "[ "
+                for s in token.fused_list:
+                    fused_list_str += str(s)
+                    fused_list_str += " "
+                fused_list_str += "]"
+                print("\t" + "fused loops: " + fused_list_str)
+            elif token.remark_type == LoopRemarkType.LOOP_DISTRIBUTION_MARK:
+                print("\t" + "distributed ways: " + str(token.distr_num))
+
         elif token.token_class == TokenClass.LOOP_BEGIN:
-            print("loop begin")
-            print("loop filename: " + str(token.filename))
-            print("loop line: " + str(token.line))
-            print("inlined: " + str(token.inlined))
+            print("\t" + "loop filename: " + str(token.filename))
+            print("\t" + "loop line: " + str(token.line))
+            print("\t" + "inlined: " + str(token.inlined))
             if token.inlined == True:
-                print("inlined filename: " + str(token.inlined_filename))
-                print("inlined line: " + str(token.inlined_line))
+                print("\t" + "inlined into filename: " + str(token.inlined_filename))
+                print("\t" + "inlined into line: " + str(token.inlined_line))
         elif token.token_class == TokenClass.LOOP_END:
-            print("loop end")
+            pass
         elif token.token_class == TokenClass.LOOP_PART_TAG:
-            print("loop partition tag")
-            print("tag type: " + str(token.tag_type))
+            print("\t" + "tag type: " + str(token.tag_type))
             if token.tag_type == LoopPartTagType.DISTR_CHUNK or token.tag_type == LoopPartTagType.DISTR_CHUNK_VECTOR_REMAINDER:
-                print("distr chunk number: " + str(token.chunk_num))
+                print("\t" + "distr chunk number: " + str(token.chunk_num))
         elif token.token_class == TokenClass.EOR:
-            print("END OF REPORT")
+            print("\t" + "END OF REPORT")
         elif token.token_class == TokenClass.UNDEFINED:
-            print("undefined")
+            print("\t" + "undefined")
         
         print("}")
 
@@ -191,7 +202,28 @@ class Tokeniser:
             if re_match != None:
                 token.remark_type = LoopRemarkType.VECTOR_DEPENDENCE
                 return token
-                
+
+            # loop fusion optimization
+            re_match = LOOP_FUSION_MAIN_re.search(token.remark)
+            if re_match != None:
+                token.remark_type = LoopRemarkType.LOOP_FUSION_MAIN
+                fused_loops_str = re_match.group(1)
+                token.fused_list =  [int(s) for s in fused_loops_str.split() if s.isdigit()]
+                return token
+
+            re_match = LOOP_FUSION_LOST_re.search(token.remark)
+            if re_match != None:
+                token.remark_type = LoopRemarkType.LOOP_FUSION_LOST
+                return token
+
+            # loop distribution optimization
+            re_match = LOOP_DISTRIBUTION_MARK_re.search(token.remark)
+            if re_match != None:
+                token.remark_type = LoopRemarkType.LOOP_DISTRIBUTION_MARK
+                token.distr_num = re_match.group(1)
+                return token
+
+            # remark we are not currently interested in
             token.remark_type = LoopRemarkType.SKIP
             return token
 
@@ -277,9 +309,9 @@ class Tokeniser:
 if __name__ == "__main__":
     
     print("= Intel C/C++ Compiler optimization report Tokeniser =")
-    print("Produces a list of tokens found in the provided optimization report file")
+    print("Produces a list of tokens found in the provided optimization report file\n")
 
-    print("=> intel_compiler.opt_report.tokeniser DEBUG mode")
+    print("=> intel_compiler.opt_report.tokeniser DEBUG mode\n")
 
     if len(sys.argv) != 2:
         error_str = "error: "
@@ -296,9 +328,11 @@ if __name__ == "__main__":
 
         if token.token_class != TokenClass.EOR:
             tokeniser.print_token(token)
+            print("")
             continue
         else:
             tokeniser.print_token(token)
+            print("")
             break
     
     print("=> intel_compiler.opt_report.tokeniser DEBUG mode finished!")

@@ -15,6 +15,10 @@ class Lexer:
         self.tokeniser = Tokeniser(self)
         self.token_num = 0
 
+    def get_token_num(self):
+        return self.token_num
+
+
     def get_next_token(self):
         token = self.tokeniser.tokenise_lexeme( self.scanner.get_next_lexeme() )
         if token != TokenClass.EOR:
@@ -24,9 +28,9 @@ class Lexer:
 if __name__ == "__main__":
     
     print("= Intel C/C++ Compiler optimization report Lexer =")
-    print("Produces a list of tokens found in the provided optimization report file")
+    print("Produces a list of tokens found in the provided optimization report file\n")
 
-    print("=> intel_compiler.opt_report.lexer DEBUG mode")
+    print("=> intel_compiler.opt_report.lexer DEBUG mode\n")
 
     if len(sys.argv) != 2:
         error_str = "error: "
@@ -41,10 +45,13 @@ if __name__ == "__main__":
         token = lexer.get_next_token()
 
         if token.token_class != TokenClass.EOR:
+            print(str(lexer.get_token_num()) + ": ")
             lexer.tokeniser.print_token(token)
+            print("")
             continue
         else:
             lexer.tokeniser.print_token(token)
+            print("")
             break
     
     print("=> intel_compiler.opt_report.lexer DEBUG mode finished!")
