@@ -16,8 +16,9 @@ class LoopType(Enum):
     MAIN = 0
     DISTRIBUTED_CHUNK = 1
     PEEL = 2
-    REMAINDER = 3
-    UNKNOWN = 4
+    VECTOR_REMAINDER = 3
+    REMAINDER = 4
+    UNKNOWN = 5
 
 class LoopClassificationInfo:
     
@@ -67,6 +68,9 @@ class Loop:
 
     def __init__(self, filename="", line=-1, depth=-1, loop_type=LoopType.UNKNOWN, number=-1):
 
+        # reference to a LoopNestingStructure this loop belongs to
+        self.loop_nest_struct = None
+
         # pointers linking loop objects into a whole consistent loop nesting structure
         # parent of an inner loop
         self.parent = None
@@ -86,6 +90,8 @@ class Loop:
             self.name = filename + "(" + str(line) + ")" + "-" + str(number)
         elif loop_type == LoopType.PEEL:
             self.name = filename + "(" + str(line) + ")" + "/"
+        elif loop_type == LoopType.VECTOR_REMAINDER:
+            self.name = filename + "(" + line + ")v%"
         elif loop_type == LoopType.REMAINDER:
             self.name = filename + "(" + line + ")%"
         elif loop_type == LoopType.UNKNOWN:
@@ -94,6 +100,7 @@ class Loop:
         # loop's composition
         self.inner_loops = {}
         self.distr_chunks = {}
+        self.vector_remainder = None
         self.remainder = None
         self.peel = None
         
@@ -120,11 +127,18 @@ class Loop:
 
     def add_inner_loop(inner_loop):
         if inner_loop.name not in self.inner_loops:
-            inner_loop.set_parent_loop(self)
-            self.inner_loops[inner_loop.name] = inner_loop
-            return True
+            if inner_loop.name not in self.loop_nest_struct.loops:
+                inner_loop.set_parent_loop(self)
+                self.inner_loops[inner_loop.name] = inner_loop
+                self.loop_nest_struct.loops[inner_loop.name] = inner_loop
+                return True
+            else:
+                sys.exit("loop nesting structure inconsistency: loop.inner_loops vs loop.loop_nest_struct.loops")
         else:
-            return False
+            if inner_loop.name in self.loop_nest_struct.loops:
+                return False
+            else:
+                sys.exit("loop nesting structure inconsistency: loop.inner_loops vs loop.loop_nest_struct.loops")
 
     def get_distr_chunk(num):
         if num in self.distr_chunks:
@@ -167,7 +181,10 @@ class LoopNestingStructure:
     """ Loop Table All the information derived out of Intel C/C++ Compiler report """
 
     def __init__(self):
+        # dictionary of all original (top-level and nested) loops 
         self.top_level_loops = {}
+        # dictionary of all original (top-level and nested) loops 
+        self.loops = {}
  
     def get_top_level_loop(loop_name):
         if loop_name in self.top_level_loops:
@@ -177,10 +194,24 @@ class LoopNestingStructure:
    
     def add_top_level_loop(loop):
         if loop.name not in self.top_level_loops:
-            self.top_level_loops[loop.name] = loop
-            return True
+            if loop.name not in self.loops:
+                loop.loop_nest_structure = self
+                self.top_level_loops[loop.name] = loop
+                self.loops[loop.name] = loop
+                return True
+            else:
+                sys.exit("loop nesting structure inconsistency: self.top_level_loops vs self.loops")
         else:
-            return False
+            if loop.name not in self.loops:
+                return False
+            else:
+                sys.exit("loop nesting structure inconsistency: self.top_level_loops vs self.loops")
+
+    def get_loop(loop_name):
+        if loop_name in self.loops:
+            return self.loops[loop_name]
+        else:
+            return None
 
 if __name__ == "__main__":
     print("Done!")

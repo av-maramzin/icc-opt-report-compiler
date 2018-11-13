@@ -16,38 +16,20 @@ class Parser:
 
     def __init__(self, lexer):
         self.lexer = lexer
-        self.current_token = None
-    
-    def next_token():
-        self.current_token = self.lexer.get_next_token()
-    
-    def error(expected):
-        sys.exit("parser: error")
-
-    def accept(expected):
-        return current_token.token_class == expected
-
-    def expect(expected):
-        token = self.current_token
-        if accept(expected):
-            self.next_token()
-            return token
-        else:
-            self.error(expected)
 
     def skip_loop():
         
         while True:
             token = self.lexer.get_next_token()
-            if token.token_class == TokenClass.LOOP_BEGIN:
+            if token.token_class == TokenClass.LOOP_END:
+                break
+            elif token.token_class == TokenClass.LOOP_BEGIN:
                 self.skip_loop()
-            elif token.token_class == TokenClass.LOOP_END:
-                break;
             else:
                 continue
             
         return            
-    
+
     def parse_optimization_report(loop_nest_struct):
         return parse_loop_report_list(loop_nest_struct)
 
@@ -67,66 +49,137 @@ class Parser:
                     continue
                 else:
                     # get Loop object to fill with the information parsed out of loop report
-                    loop_name = Loop.form_main_loop_name(loop_filename, loop_line)
+                    loop_name = Loop.form_main_loop_name(token.filename, token.line)
                     loop = loop_nest_struct.get_top_level_loop(loop_name)
                     if loop == None:
                         # haven't seen any parts of this loop yet
                         loop_type = LoopType.MAIN
                         num = 0 # number 0 for the main loop part
+                        loop_depth = 0
                         loop = Loop(loop_filename, loop_line, loop_depth, loop_type, num)
                         loop_nest_struct.add_top_level_loop(loop)
-                        loop_nest_struct.add_loop(loop)
                 
                     # parse loop
-                    self.parse_loop(loop)
+                    self.parse_loop_report(loop)
         
         return True
 
+    def parse_loop_report(outer_main_loop):
+        
+        # information to be parsed relates to the main outer loop
+        loop = outer_main_loop
 
-    def parse_loop_partition_tag(loop, line):
+        while True:
+            
+            token = self.lexer.get_next_token()
+
+            if token.token_class == TokenClass.SKIP:
+                # this token type is the most frequent ->
+                # -> so it is code performance wise to have it 
+                # going first in the compound if statement
+                continue
+            elif token.token_class == TokenClass.LOOP_REMARK:
+                parse_loop_remark(loop, token)
+                continue
+            elif token.token_class == TokenClass.LOOP_BEGIN:
+                if token.inlined == True:
+                    self.skip_loop()
+                else:
+                    # get inner Loop object to fill with the information parsed out of incoming loop report
+                    loop_name = Loop.form_main_loop_name(token.filename, token.line)
+                    inner_loop = loop.get_inner_loop(loop_name)
+                    if inner_loop == None:
+                        # haven't seen any parts of this loop yet
+                        loop_type = LoopType.MAIN
+                        num = 0 # number 0 for the main loop part
+                        loop_depth = loop.depth + 1
+                        inner_loop = Loop(loop_filename, loop_line, loop_depth, loop_type, num)
+                        loop.add_inner_loop(inner_loop)
+                    # parse loop
+                    self.parse_loop_report(loop)
+                continue
+            elif token.token_class == TokenClass.LOOP_END:
+                # loop is done with
+                break
+            elif token.token_class == TokenClass.LOOP_PART_TAG:
+                old_loop = loop
+                loop = parse_loop_partition_tag(loop, token)
+                if loop is old_loop:
+                    sys.exit("error:")
+                continue
+        
+        return
+            
+    def parse_loop_partition_tag(loop, token):
 
         # swap an object loop pointer points to;
         # main loop component -> peeled loop part;
         # all further ICC remarks in the current report scope
         # relate to a loop peeled part object;
 
-        # provided line matched any of the loop partitioning tags
-        match = False
+        if token.token_class != TokenClass.LOOP_PART_TAG:
+            sys.exit("error:")
 
-        # check if it is a distributed chunk of the original loop
-        re_match = LOOP_DISTR_CHUNK_re.search(line)
-        if re_match != None:
-            match = True
-            num = re_match.group(1)
+        # <DistributedChunk([0-9]+)>
+        if token.tag_type == PartitionTagType.DISTR_CHUNK:
+            num = token.chunk_num
             distr_chunk_loop = loop.get_distr_chunk(num)
             if distr_chunk_loop == None:
                 loop_type = LoopType.DISTRIBUTED_CHUNK
                 distr_chunk_loop = Loop(loop.filename, loop.line, loop.depth, loop_type, num)
                 loop.add_distr_chunk(distr_chunk_loop, num)
-            return (distr_chunk_loop, match) 
+            return distr_chunk_loop 
 
-        # check if it is a peeled off part of the original loop
-        re_match = LOOP_PEEL_re.search(line)
-        if re_match != None:
-            match = True
+        # loop distributed chunk remainder
+        if token.tag_type == PartitionTagType.DISTR_CHUNK_VECTOR_REMAINDER:
+            num = token.chunk_num
+            distr_chunk_loop = loop.get_distr_chunk(num)
+            if distr_chunk_loop == None:
+                loop_type = LoopType.DISTRIBUTED_CHUNK
+                distr_chunk_loop = Loop(loop.filename, loop.line, loop.depth, loop_type, num)
+                loop.add_distr_chunk(distr_chunk_loop, num)
+            loop_type = LoopType.VECTOR_REMAINDER
+            distr_chunk_remainder_loop = Loop(loop.filename, loop.line, loop.depth, loop_type, num)
+            distr_chunk_loop.add_remainder_loop(distr_chunk_loop, num)
+            return distr_chunk_loop 
+
+        
+        # loop peel
+        if token.tag_type == PartitionTagType.PEEL:
             peel_loop = loop.get_peel_loop()
             if peel_loop == None:
                 loop_type = LoopType.PEEL
-                peel_loop = Loop(loop.filename, loop.line, loop.depth, loop_type, 0)
+                num = 0
+                peel_loop = Loop(loop.filename, loop.line, loop.depth, loop_type, num)
                 loop.add_peel_loop(peel_loop)
-            return (peel_loop, match)
- 
-        # check if it is a loop vectorization remainder
-        re_match = LOOP_VECTOR_REMAINDER_re.search(line)
-        if re_match != None:
-            match = True
+            return peel_loop
+
+        # loop vectorization remainder
+        if token.tag_type == PartitionTagType.VECTOR_REMAINDER:
+            remainder_loop = loop.get_vector_remainder_loop()
+            if remainder_loop == None:
+                loop_type = LoopType.REMAINDER
+                remainder_loop = Loop(loop.filename, loop.line, loop.depth, loop_type, 0)
+                loop.add_remainder_loop(remainder_loop)
+            return remainder_loop
+      
+        # loop remainder
+        if token.tag_type == PartitionTagType.REMAINDER:
             remainder_loop = loop.get_remainder_loop()
             if remainder_loop == None:
                 loop_type = LoopType.REMAINDER
                 remainder_loop = Loop(loop.filename, loop.line, loop.depth, loop_type, 0)
                 loop.add_remainder_loop(remainder_loop)
-                return (remainder_loop, match)
+            return remainder_loop
 
+
+
+ 
+        # check if it is a loop vectorization remainder
+        re_match = LOOP_VECTOR_REMAINDER_re.search(line)
+        if re_match != None:
+            match = True
+ 
         # no loop partitioning tags have been identified, 
         # continue the filling of the main loop
         return (loop, match)
