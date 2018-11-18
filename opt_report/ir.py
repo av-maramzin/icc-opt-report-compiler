@@ -4,8 +4,6 @@ import re
 import sys
 from enum import Enum
 
-import icc_opt_report_regex
-
 class Classification(Enum):
     NO = 0
     YES = 1
@@ -13,12 +11,15 @@ class Classification(Enum):
     UNINITIALIZED = 3
 
 class LoopType(Enum):
-    MAIN = 0
-    DISTRIBUTED_CHUNK = 1
-    PEEL = 2
-    VECTOR_REMAINDER = 3
-    REMAINDER = 4
-    UNKNOWN = 5
+    MAIN = 0 # main loop's kernel
+    DISTR = 1 # distributed chunk
+    FUSED = 2 # fused loop
+    PEEL = 3 # peeled off loop part
+    VECTOR_REMAINDER = 4 # vectorization remainder
+    REMAINDER = 5
+    PARTIAL = 6
+    OUTER = 7
+    UNKNOWN = 6
 
 class LoopClassificationInfo:
     
@@ -31,13 +32,10 @@ class LoopClassificationInfo:
 
         # loop's parallelisation status
         self.parallel = Classification.UNINITIALIZED
-        # loop could potentially be parallelized, but wasn't
         self.parallel_potential = Classification.UNINITIALIZED
 
         # loop vectorization status
         self.vector = Classification.UNINITIALIZED
-        # loop could potentially be vectorized, but wasn't
-        # (inner loop was targeted for vectorization, for example)
         self.vector_potential = Classification.UNINITIALIZED
 
         # loop dependence present
@@ -71,7 +69,7 @@ class Loop:
         # reference to a LoopNestingStructure this loop belongs to
         self.loop_nest_struct = None
 
-        # pointers linking loop objects into a whole consistent loop nesting structure
+        # references linking loop objects into a whole consistent loop nesting structure
         # parent of an inner loop
         self.parent = None
         # main loop reference for distributed parts of a loop, remainders, peels, etc.
@@ -84,17 +82,17 @@ class Loop:
         self.loop_type = loop_type
         self.number = number
 
-        if loop_type == LoopType.MAIN:
+        if self.loop_type.value == LoopType.MAIN.value:
             self.name = filename + "(" + line + ")"
-        elif loop_type == LoopType.DISTRIBUTED_CHUNK:
+        elif self.loop_type.value == LoopType.DISTRIBUTED_CHUNK.value:
             self.name = filename + "(" + str(line) + ")" + "-" + str(number)
-        elif loop_type == LoopType.PEEL:
+        elif self.loop_type.value == LoopType.PEEL.value:
             self.name = filename + "(" + str(line) + ")" + "/"
-        elif loop_type == LoopType.VECTOR_REMAINDER:
+        elif self.loop_type.value == LoopType.VECTOR_REMAINDER.value:
             self.name = filename + "(" + line + ")v%"
-        elif loop_type == LoopType.REMAINDER:
+        elif self.loop_type.value == LoopType.REMAINDER.value:
             self.name = filename + "(" + line + ")%"
-        elif loop_type == LoopType.UNKNOWN:
+        elif self.loop_type.value == LoopType.UNKNOWN.value:
             sys.exit("A type of the loop " + filename + "(" + str(line) + ")" + "has not been specified")
         
         # loop's composition
@@ -106,47 +104,60 @@ class Loop:
         
         # all loop optimization information gathered from ICC report
         self.classification = LoopClassificationInfo(self)
-   
-    def get_parent_loop():
+
+    def set_loop_nest_struct(self, loop_nest_struct):
+        self.loop_nest_struct = loop_nest_struct
+
+    def get_parent_loop(self):
         return self.parent
 
-    def set_parent_loop(parent):
+    def set_parent_loop(self, parent):
         self.parent = parent
 
-    def get_main_loop():
+    def get_main_loop(self):
         return self.main
 
-    def set_main_loop(main):
+    def set_main_loop(self, main):
         self.main = main
 
-    def get_inner_loop(inner_loop_name):
+    def get_inner_loop(self, inner_loop_name):
         if inner_loop_name in self.inner_loops:
             return self.inner_loops[inner_loop_name]
         else:
             return None
 
-    def add_inner_loop(inner_loop):
+    def add_inner_loop(self, inner_loop):
         if inner_loop.name not in self.inner_loops:
-            if inner_loop.name not in self.loop_nest_struct.loops:
+            if self.loop_type == LoopType.MAIN: 
+                if inner_loop.name not in self.loop_nest_struct.loops:
+                    inner_loop.set_parent_loop(self)
+                    inner_loop.set_loop_nest_struct(self.loop_nest_struct)
+                    self.inner_loops[inner_loop.name] = inner_loop
+                    self.loop_nest_struct.loops[inner_loop.name] = inner_loop
+                    return True
+                else:
+                    sys.exit("error: ir: loop nesting structure inconsistency: loop.inner_loops vs loop.loop_nest_struct.loops")
+            else:
                 inner_loop.set_parent_loop(self)
+                inner_loop.loop_nest_struct = self.loop_nest_struct
                 self.inner_loops[inner_loop.name] = inner_loop
-                self.loop_nest_struct.loops[inner_loop.name] = inner_loop
                 return True
-            else:
-                sys.exit("loop nesting structure inconsistency: loop.inner_loops vs loop.loop_nest_struct.loops")
         else:
-            if inner_loop.name in self.loop_nest_struct.loops:
-                return False
+            if self.loop_type == LoopType.MAIN: 
+                if inner_loop.name in self.loop_nest_struct.loops:
+                    return False
+                else:
+                    sys.exit("error: ir: loop nesting structure inconsistency: loop.inner_loops vs loop.loop_nest_struct.loops")
             else:
-                sys.exit("loop nesting structure inconsistency: loop.inner_loops vs loop.loop_nest_struct.loops")
+                return False
 
-    def get_distr_chunk(num):
+    def get_distr_chunk(self, num):
         if num in self.distr_chunks:
             return self.distr_chunks[num]
         else:
             return None 
 
-    def add_distr_chunk(distr_chunk, num):
+    def add_distr_chunk(self, distr_chunk, num):
         if num not in self.distr_chunks:
             distr_chunk.set_main_loop(self)
             self.distr_chunks[num] = distr_chunk
@@ -154,10 +165,10 @@ class Loop:
         else:
             return False
 
-    def get_peel_loop():
+    def get_peel_loop(self):
         return self.peel
 
-    def add_peel_loop(peel_loop):
+    def add_peel_loop(self, peel_loop):
         if self.peel == None:
             peel_loop.set_main_loop(self)
             self.peel = peel_loop
@@ -165,10 +176,10 @@ class Loop:
         else:
             return False
 
-    def get_remainder_loop():
+    def get_remainder_loop(self):
         return self.remainder
 
-    def add_remainder_loop(remainder_loop):
+    def add_remainder_loop(self, remainder_loop):
         if self.remainder == None:
             remainder_loop.set_main_loop(self)
             self.remainder = remainder_loop
@@ -176,23 +187,49 @@ class Loop:
         else:
             return False
 
+    def get_vector_remainder_loop(self):
+        return self.vector_remainder
+
+    def add_vector_remainder_loop(self, remainder_loop):
+        if self.vector_remainder == None:
+            remainder_loop.set_main_loop(self)
+            self.vector_remainder = remainder_loop
+            return True
+        else:
+            return False
+
 class LoopNestingStructure:
 
-    """ Loop Table All the information derived out of Intel C/C++ Compiler report """
+    """ 
+    class LoopNestingStructure;
+
+    A container for all loops encountered in the Intel C/C++ 
+    compiler optimization report. This container stores only 
+    references to the original loops (present in the source code,
+    and not created by the ICC compiler itself (such as loop
+    peels, remainders, distributed parts, etc.)).
+    """
 
     def __init__(self):
-        # dictionary of all original (top-level and nested) loops 
+        """ LoopNestingStructure constructor method. """   
+        
+        # dictionary of all original top-level loops, representing 
+        # entrance points into the loop nesting structure
         self.top_level_loops = {}
-        # dictionary of all original (top-level and nested) loops 
+
+        # convenience data-structure
+        # dictionary of all original (not created by the ICC compiler) (top-level and nested) loops;
+        # this list is also being populated indirectly out of Loop class objects, through a reference
+        # to a LoopNestingStructure class containing the loop
         self.loops = {}
  
-    def get_top_level_loop(loop_name):
+    def get_top_level_loop(self, loop_name):
         if loop_name in self.top_level_loops:
             return self.top_level_loops[loop_name]
         else:
             return None
    
-    def add_top_level_loop(loop):
+    def add_top_level_loop(self, loop):
         if loop.name not in self.top_level_loops:
             if loop.name not in self.loops:
                 loop.loop_nest_structure = self
@@ -200,12 +237,12 @@ class LoopNestingStructure:
                 self.loops[loop.name] = loop
                 return True
             else:
-                sys.exit("loop nesting structure inconsistency: self.top_level_loops vs self.loops")
+                sys.exit("error: ir: loop nesting structure inconsistency (self.top_level_loops vs self.loops)")
         else:
-            if loop.name not in self.loops:
+            if loop.name in self.loops:
                 return False
             else:
-                sys.exit("loop nesting structure inconsistency: self.top_level_loops vs self.loops")
+                sys.exit("error: ir: loop nesting structure inconsistency (self.top_level_loops vs self.loops)")
 
     def get_loop(loop_name):
         if loop_name in self.loops:

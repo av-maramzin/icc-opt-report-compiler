@@ -1,10 +1,11 @@
 #! /usr/bin/python3
 
 import sys
+import logging
 
-from opt_report_compiler.lexer import Lexer
-from opt_report_compiler.parser import Parser
-from opt_report_compiler.ir import *
+from lexer import Lexer
+from parser import Parser
+from ir import *
 
 class IccOptReportCompiler:
 
@@ -12,28 +13,45 @@ class IccOptReportCompiler:
     Intel C/C++ Compiler (ICC) optimization report compiler.
     The main driver class, responsible for interaction between all compiler components.    
     """
-
+    
     def __init__(self, report_filename):
-        self.report_filename
+        self.report_filename = report_filename
         self.lexer = Lexer(self.report_filename)
         self.parser = Parser(self.lexer)
         self.ir = LoopNestingStructure()
 
-    def compilation_error():
-        error_str = "IccOptReportCompiler(): optimization report compilation error: "
-        error_str += "could not compile " + str(self.report_filename)
-        sys.exit("[!] error: " + error_str)
-
-    def get_ir():
+    def get_ir(self):
         return self.ir
 
-    def compile():
+    def compile(self):
         if self.parser.parse_optimization_report(self.ir) == True:
             pass
         else:
-            compilation_error()        
+            sys.exit("error: compiler: could not compile the input file")
 
 if __name__ == "__main__":
-    print("Intel C/C++ Compiler (ICC) optimization report compiler has been defined")
+
+    print("= Intel C/C++ Compiler (ICC) optimization report compiler =")
+    print("Compiler: ICC opt report file -> Lexer -> a list of tokens ->\n")
+    print("-> Parser -> in-memory IR\n")
+
+    print("=> icc.opt_report.compiler DEBUG mode\n")
+
+    logging.basicConfig(level=logging.DEBUG)
+    logging.debug('[DEBUG] compiler.py')
+
+    if len(sys.argv) != 2:
+        error_str = "error: "
+        error_str += "compiler: "
+        error_str += "incorrect argument list => use ./compiler.py opt-report-filename"
+        sys.exit(error_str)
+
+    compiler = IccOptReportCompiler(sys.argv[1])
+    compiler.compile()
+
+    print("=> icc.opt_report.compiler DEBUG mode finished!")
+    
+    sys.exit()
+
 else:
     pass

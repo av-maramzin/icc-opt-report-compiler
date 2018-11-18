@@ -7,6 +7,8 @@ from scanner import Scanner
 
 from regex import *
 
+from ir import LoopType
+
 class TokenClass(Enum):
     
     """ Intel C/C++ Compiler (ICC) optimization report token class """
@@ -44,7 +46,7 @@ class LoopRemarkType(Enum):
     LOOP_FUSION_LOST = 8
     LOOP_DISTRIBUTION_MARK = 9
 
-class LoopType(Enum):
+class Type(Enum):
     
     """ 
     Intel C/C++ Compiler (ICC) optimization report parallelized/vectorized loop remark type

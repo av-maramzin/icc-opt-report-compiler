@@ -18,7 +18,6 @@ class Lexer:
     def get_token_num(self):
         return self.token_num
 
-
     def get_next_token(self):
         token = self.tokeniser.tokenise_lexeme( self.scanner.get_next_lexeme() )
         if token != TokenClass.EOR:
