@@ -46,17 +46,6 @@ class LoopRemarkType(Enum):
     LOOP_FUSION_LOST = 8
     LOOP_DISTRIBUTION_MARK = 9
 
-class Type(Enum):
-    
-    """ 
-    Intel C/C++ Compiler (ICC) optimization report parallelized/vectorized loop remark type
-    """
-    
-    MAIN = 0
-    DISTR = 1
-    FUSED = 2
-    PARTIAL = 3
-
 class Token:
 
     """ Intel C/C++ Compiler (ICC) optimization report token """

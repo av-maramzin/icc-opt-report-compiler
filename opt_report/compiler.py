@@ -37,8 +37,9 @@ if __name__ == "__main__":
 
     print("=> icc.opt_report.compiler DEBUG mode\n")
 
-    logging.basicConfig(level=logging.DEBUG)
-    logging.debug('[DEBUG] compiler.py')
+    logging.basicConfig(filename='compiler.debug', level=logging.DEBUG)
+
+    logging.debug('Debugging compiler.py')
 
     if len(sys.argv) != 2:
         error_str = "error: "
