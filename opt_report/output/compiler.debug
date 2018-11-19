@@ -1,0 +1,2069 @@
+DEBUG:root:Debugging compiler.py
+DEBUG:root:===> parse_optimization_report()
+DEBUG:root:===> parse_loop_report_list()
+DEBUG:root:=> token [1]: skip
+DEBUG:root:=> token [2]: skip
+DEBUG:root:=> token [3]: skip
+DEBUG:root:=> token [4]: skip
+DEBUG:root:=> token [5]: skip
+DEBUG:root:=> token [6]: skip
+DEBUG:root:=> token [7]: skip
+DEBUG:root:=> token [8]: skip
+DEBUG:root:=> token [9]: skip
+DEBUG:root:=> token [10]: skip
+DEBUG:root:=> token [11]: skip
+DEBUG:root:=> token [12]: skip
+DEBUG:root:=> token [13]: skip
+DEBUG:root:=> token [14]: skip
+DEBUG:root:=> token [15]: skip
+DEBUG:root:=> token [16]: skip
+DEBUG:root:=> token [17]: skip
+DEBUG:root:=> token [18]: skip
+DEBUG:root:=> token [19]: skip
+DEBUG:root:=> token [20]: skip
+DEBUG:root:=> token [21]: skip
+DEBUG:root:=> token [22]: skip
+DEBUG:root:=> token [23]: skip
+DEBUG:root:=> token [24]: skip
+DEBUG:root:=> token [25]: skip
+DEBUG:root:=> token [26]: skip
+DEBUG:root:=> token [27]: skip
+DEBUG:root:=> token [28]: skip
+DEBUG:root:=> token [29]: skip
+DEBUG:root:=> token [30]: skip
+DEBUG:root:=> token [31]: skip
+DEBUG:root:=> token [32]: skip
+DEBUG:root:=> token [33]: skip
+DEBUG:root:=> token [34]: skip
+DEBUG:root:=> token [35]: skip
+DEBUG:root:=> token [36]: skip
+DEBUG:root:=> token [37]: skip
+DEBUG:root:=> token [38]: skip
+DEBUG:root:=> token [39]: skip
+DEBUG:root:=> token [40]: skip
+DEBUG:root:=> token [41]: skip
+DEBUG:root:=> token [42]: skip
+DEBUG:root:=> token [43]: skip
+DEBUG:root:=> token [44]: skip
+DEBUG:root:=> token [45]: skip
+DEBUG:root:=> token [46]: skip
+DEBUG:root:=> token [47]: skip
+DEBUG:root:=> token [48]: skip
+DEBUG:root:=> token [49]: skip
+DEBUG:root:=> token [50]: skip
+DEBUG:root:=> token [51]: skip
+DEBUG:root:=> token [52]: skip
+DEBUG:root:=> token [53]: skip
+DEBUG:root:=> token [54]: skip
+DEBUG:root:=> token [55]: skip
+DEBUG:root:=> token [56]: skip
+DEBUG:root:=> token [57]: skip
+DEBUG:root:=> token [58]: skip
+DEBUG:root:=> token [59]: skip
+DEBUG:root:=> token [60]: skip
+DEBUG:root:=> token [61]: skip
+DEBUG:root:=> token [62]: skip
+DEBUG:root:=> token [63]: skip
+DEBUG:root:=> token [64]: skip
+DEBUG:root:=> token [65]: skip
+DEBUG:root:=> token [66]: skip
+DEBUG:root:=> token [67]: skip
+DEBUG:root:=> token [68]: skip
+DEBUG:root:=> token [69]: skip
+DEBUG:root:=> token [70]: skip
+DEBUG:root:=> token [71]: skip
+DEBUG:root:=> token [72]: skip
+DEBUG:root:=> token [73]: skip
+DEBUG:root:=> token [74]: skip
+DEBUG:root:=> token [75]: skip
+DEBUG:root:=> token [76]: skip
+DEBUG:root:=> token [77]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(52)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b521e48>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(52): depth(0) MAIN
+DEBUG:root:=> added a new top level loop Loop(<ir.Loop object at 0x7f970b521e48>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(52)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b521e48>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(52)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b521e48>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(52)
+DEBUG:root:=> token: [78] loop remark
+DEBUG:root:=> token: [79] loop remark
+DEBUG:root:=> token: [80] loop remark
+DEBUG:root:=> token: [81] loop remark
+DEBUG:root:=> token [82]: skip
+DEBUG:root:=> token [83]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(53)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b521f98>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(53): depth(1) MAIN
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b521e48>) added a new inner loop Loop(<ir.Loop object at 0x7f970b521f98>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(52)
+DEBUG:root:inner loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(53)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b521f98>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(53)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b521f98>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(53)
+DEBUG:root:=> token: [84] loop remark
+DEBUG:root:=> token: [85] loop remark
+DEBUG:root:=> token [86]: skip
+DEBUG:root:=> token [87]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(54)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52c160>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(54): depth(2) MAIN
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b521f98>) added a new inner loop Loop(<ir.Loop object at 0x7f970b52c160>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(53)
+DEBUG:root:inner loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(54)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52c160>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(54)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52c160>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(54)
+DEBUG:root:=> token [88]: loop partition tag
+DEBUG:root:===> parse_loop_partition_tag(loop=<ir.Loop object at 0x7f970b52c160>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(54)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52c208>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(54): depth(2) PEEL
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52c160>): added peel loop Loop(<ir.Loop object at 0x7f970b52c208>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(54)
+DEBUG:root:peel loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(54)
+DEBUG:root:=> token: [89] loop remark
+DEBUG:root:=> token: [90] loop remark
+DEBUG:root:=> token [91]: LOOP END
+DEBUG:root:=> token [92]: skip
+DEBUG:root:=> token [93]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(54)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52c160>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(54)
+DEBUG:root:=> token: [94] loop remark
+DEBUG:root:=> token: [95] loop remark
+DEBUG:root:=> token: [96] loop remark
+DEBUG:root:=> token: [97] loop remark
+DEBUG:root:=> token: [98] loop remark
+DEBUG:root:=> token: [99] loop remark
+DEBUG:root:=> token: [100] loop remark
+DEBUG:root:=> token: [101] loop remark
+DEBUG:root:=> token: [102] loop remark
+DEBUG:root:=> token: [103] loop remark
+DEBUG:root:=> token: [104] loop remark
+DEBUG:root:=> token: [105] loop remark
+DEBUG:root:=> token: [106] loop remark
+DEBUG:root:=> token: [107] loop remark
+DEBUG:root:=> token: [108] loop remark
+DEBUG:root:=> token: [109] loop remark
+DEBUG:root:=> token: [110] loop remark
+DEBUG:root:=> token: [111] loop remark
+DEBUG:root:=> token: [112] loop remark
+DEBUG:root:=> token: [113] loop remark
+DEBUG:root:=> token: [114] loop remark
+DEBUG:root:=> token: [115] loop remark
+DEBUG:root:=> token: [116] loop remark
+DEBUG:root:=> token: [117] loop remark
+DEBUG:root:=> token: [118] loop remark
+DEBUG:root:=> token: [119] loop remark
+DEBUG:root:=> token: [120] loop remark
+DEBUG:root:=> token: [121] loop remark
+DEBUG:root:=> token: [122] loop remark
+DEBUG:root:=> token: [123] loop remark
+DEBUG:root:=> token [124]: LOOP END
+DEBUG:root:=> token [125]: skip
+DEBUG:root:=> token [126]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(54)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52c160>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(54)
+DEBUG:root:=> token [127]: loop partition tag
+DEBUG:root:===> parse_loop_partition_tag(loop=<ir.Loop object at 0x7f970b52c160>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(54)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52c278>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(54): depth(2) VECTOR_REMAINDER
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52c160>): added remainder loop Loop(<ir.Loop object at 0x7f970b52c278>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(54)
+DEBUG:root:remainder loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(54)
+DEBUG:root:=> token: [128] loop remark
+DEBUG:root:=> token [129]: LOOP END
+DEBUG:root:=> token [130]: LOOP END
+DEBUG:root:=> token [131]: LOOP END
+DEBUG:root:=> token [132]: skip
+DEBUG:root:=> token [133]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(75)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b521f28>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(75): depth(0) MAIN
+DEBUG:root:=> added a new top level loop Loop(<ir.Loop object at 0x7f970b521f28>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(75)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b521f28>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(75)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b521f28>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(75)
+DEBUG:root:=> token: [134] loop remark
+DEBUG:root:=> token: [135] loop remark
+DEBUG:root:=> token: [136] loop remark
+DEBUG:root:=> token: [137] loop remark
+DEBUG:root:=> token: [138] loop remark
+DEBUG:root:=> token: [139] loop remark
+DEBUG:root:=> token [140]: skip
+DEBUG:root:=> token [141]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(76)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52c2b0>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(76): depth(1) MAIN
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b521f28>) added a new inner loop Loop(<ir.Loop object at 0x7f970b52c2b0>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(75)
+DEBUG:root:inner loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(76)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52c2b0>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(76)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52c2b0>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(76)
+DEBUG:root:=> token: [142] loop remark
+DEBUG:root:=> token: [143] loop remark
+DEBUG:root:=> token [144]: skip
+DEBUG:root:=> token [145]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(77)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52c438>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(77): depth(2) MAIN
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52c2b0>) added a new inner loop Loop(<ir.Loop object at 0x7f970b52c438>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(76)
+DEBUG:root:inner loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(77)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52c438>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(77)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52c438>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(77)
+DEBUG:root:=> token: [146] loop remark
+DEBUG:root:=> token: [147] loop remark
+DEBUG:root:=> token [148]: skip
+DEBUG:root:=> token [149]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(78)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52c550>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(78): depth(3) MAIN
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52c438>) added a new inner loop Loop(<ir.Loop object at 0x7f970b52c550>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(77)
+DEBUG:root:inner loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(78)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52c550>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(78)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52c550>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(78)
+DEBUG:root:=> token: [150] loop remark
+DEBUG:root:=> token: [151] loop remark
+DEBUG:root:=> token: [152] loop remark
+DEBUG:root:=> token: [153] loop remark
+DEBUG:root:=> token: [154] loop remark
+DEBUG:root:=> token: [155] loop remark
+DEBUG:root:=> token: [156] loop remark
+DEBUG:root:=> token: [157] loop remark
+DEBUG:root:=> token: [158] loop remark
+DEBUG:root:=> token: [159] loop remark
+DEBUG:root:=> token: [160] loop remark
+DEBUG:root:=> token: [161] loop remark
+DEBUG:root:=> token: [162] loop remark
+DEBUG:root:=> token: [163] loop remark
+DEBUG:root:=> token [164]: LOOP END
+DEBUG:root:=> token [165]: skip
+DEBUG:root:=> token [166]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(78)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52c550>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(78)
+DEBUG:root:=> token [167]: loop partition tag
+DEBUG:root:===> parse_loop_partition_tag(loop=<ir.Loop object at 0x7f970b52c550>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(78)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52c5c0>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(78): depth(3) VECTOR_REMAINDER
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52c550>): added remainder loop Loop(<ir.Loop object at 0x7f970b52c5c0>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(78)
+DEBUG:root:remainder loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(78)
+DEBUG:root:=> token: [168] loop remark
+DEBUG:root:=> token [169]: LOOP END
+DEBUG:root:=> token [170]: LOOP END
+DEBUG:root:=> token [171]: LOOP END
+DEBUG:root:=> token [172]: LOOP END
+DEBUG:root:=> token [173]: skip
+DEBUG:root:=> token [174]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(91)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52c710>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(91): depth(0) MAIN
+DEBUG:root:=> added a new top level loop Loop(<ir.Loop object at 0x7f970b52c710>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(91)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52c710>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(91)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52c710>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(91)
+DEBUG:root:=> token: [175] loop remark
+DEBUG:root:=> token: [176] loop remark
+DEBUG:root:=> token: [177] loop remark
+DEBUG:root:=> token: [178] loop remark
+DEBUG:root:=> token [179]: skip
+DEBUG:root:=> token [180]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(92)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52c3c8>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(92): depth(1) MAIN
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52c710>) added a new inner loop Loop(<ir.Loop object at 0x7f970b52c3c8>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(91)
+DEBUG:root:inner loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(92)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52c3c8>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(92)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52c3c8>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(92)
+DEBUG:root:=> token: [181] loop remark
+DEBUG:root:=> token: [182] loop remark
+DEBUG:root:=> token [183]: skip
+DEBUG:root:=> token [184]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(93)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52c748>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(93): depth(2) MAIN
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52c3c8>) added a new inner loop Loop(<ir.Loop object at 0x7f970b52c748>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(92)
+DEBUG:root:inner loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(93)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52c748>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(93)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52c748>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(93)
+DEBUG:root:=> token [185]: loop partition tag
+DEBUG:root:===> parse_loop_partition_tag(loop=<ir.Loop object at 0x7f970b52c748>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(93)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52c7f0>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(93): depth(2) PEEL
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52c748>): added peel loop Loop(<ir.Loop object at 0x7f970b52c7f0>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(93)
+DEBUG:root:peel loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(93)
+DEBUG:root:=> token: [186] loop remark
+DEBUG:root:=> token: [187] loop remark
+DEBUG:root:=> token [188]: LOOP END
+DEBUG:root:=> token [189]: skip
+DEBUG:root:=> token [190]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(93)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52c748>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(93)
+DEBUG:root:=> token: [191] loop remark
+DEBUG:root:=> token: [192] loop remark
+DEBUG:root:=> token: [193] loop remark
+DEBUG:root:=> token: [194] loop remark
+DEBUG:root:=> token: [195] loop remark
+DEBUG:root:=> token: [196] loop remark
+DEBUG:root:=> token: [197] loop remark
+DEBUG:root:=> token: [198] loop remark
+DEBUG:root:=> token: [199] loop remark
+DEBUG:root:=> token: [200] loop remark
+DEBUG:root:=> token: [201] loop remark
+DEBUG:root:=> token: [202] loop remark
+DEBUG:root:=> token: [203] loop remark
+DEBUG:root:=> token: [204] loop remark
+DEBUG:root:=> token: [205] loop remark
+DEBUG:root:=> token: [206] loop remark
+DEBUG:root:=> token: [207] loop remark
+DEBUG:root:=> token: [208] loop remark
+DEBUG:root:=> token: [209] loop remark
+DEBUG:root:=> token: [210] loop remark
+DEBUG:root:=> token: [211] loop remark
+DEBUG:root:=> token: [212] loop remark
+DEBUG:root:=> token: [213] loop remark
+DEBUG:root:=> token: [214] loop remark
+DEBUG:root:=> token: [215] loop remark
+DEBUG:root:=> token: [216] loop remark
+DEBUG:root:=> token: [217] loop remark
+DEBUG:root:=> token: [218] loop remark
+DEBUG:root:=> token: [219] loop remark
+DEBUG:root:=> token: [220] loop remark
+DEBUG:root:=> token: [221] loop remark
+DEBUG:root:=> token: [222] loop remark
+DEBUG:root:=> token: [223] loop remark
+DEBUG:root:=> token: [224] loop remark
+DEBUG:root:=> token: [225] loop remark
+DEBUG:root:=> token: [226] loop remark
+DEBUG:root:=> token: [227] loop remark
+DEBUG:root:=> token: [228] loop remark
+DEBUG:root:=> token: [229] loop remark
+DEBUG:root:=> token: [230] loop remark
+DEBUG:root:=> token: [231] loop remark
+DEBUG:root:=> token: [232] loop remark
+DEBUG:root:=> token: [233] loop remark
+DEBUG:root:=> token: [234] loop remark
+DEBUG:root:=> token: [235] loop remark
+DEBUG:root:=> token: [236] loop remark
+DEBUG:root:=> token: [237] loop remark
+DEBUG:root:=> token: [238] loop remark
+DEBUG:root:=> token: [239] loop remark
+DEBUG:root:=> token: [240] loop remark
+DEBUG:root:=> token: [241] loop remark
+DEBUG:root:=> token: [242] loop remark
+DEBUG:root:=> token: [243] loop remark
+DEBUG:root:=> token: [244] loop remark
+DEBUG:root:=> token: [245] loop remark
+DEBUG:root:=> token: [246] loop remark
+DEBUG:root:=> token: [247] loop remark
+DEBUG:root:=> token: [248] loop remark
+DEBUG:root:=> token: [249] loop remark
+DEBUG:root:=> token: [250] loop remark
+DEBUG:root:=> token: [251] loop remark
+DEBUG:root:=> token: [252] loop remark
+DEBUG:root:=> token: [253] loop remark
+DEBUG:root:=> token: [254] loop remark
+DEBUG:root:=> token: [255] loop remark
+DEBUG:root:=> token: [256] loop remark
+DEBUG:root:=> token: [257] loop remark
+DEBUG:root:=> token: [258] loop remark
+DEBUG:root:=> token: [259] loop remark
+DEBUG:root:=> token: [260] loop remark
+DEBUG:root:=> token: [261] loop remark
+DEBUG:root:=> token: [262] loop remark
+DEBUG:root:=> token: [263] loop remark
+DEBUG:root:=> token: [264] loop remark
+DEBUG:root:=> token [265]: LOOP END
+DEBUG:root:=> token [266]: skip
+DEBUG:root:=> token [267]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(93)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52c748>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(93)
+DEBUG:root:=> token [268]: loop partition tag
+DEBUG:root:===> parse_loop_partition_tag(loop=<ir.Loop object at 0x7f970b52c748>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(93)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52c7b8>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(93): depth(2) VECTOR_REMAINDER
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52c748>): added remainder loop Loop(<ir.Loop object at 0x7f970b52c7b8>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(93)
+DEBUG:root:remainder loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(93)
+DEBUG:root:=> token: [269] loop remark
+DEBUG:root:=> token [270]: LOOP END
+DEBUG:root:=> token [271]: LOOP END
+DEBUG:root:=> token [272]: skip
+DEBUG:root:=> token [273]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(149)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52c978>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(149): depth(1) MAIN
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52c710>) added a new inner loop Loop(<ir.Loop object at 0x7f970b52c978>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(91)
+DEBUG:root:inner loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(149)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52c978>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(149)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52c978>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(149)
+DEBUG:root:=> token: [274] loop remark
+DEBUG:root:=> token: [275] loop remark
+DEBUG:root:=> token [276]: skip
+DEBUG:root:=> token [277]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(151)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52c6a0>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(151): depth(2) MAIN
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52c978>) added a new inner loop Loop(<ir.Loop object at 0x7f970b52c6a0>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(149)
+DEBUG:root:inner loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(151)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52c6a0>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(151)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52c6a0>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(151)
+DEBUG:root:=> token: [278] loop remark
+DEBUG:root:=> token [279]: skip
+DEBUG:root:=> token: [280] loop remark
+DEBUG:root:=> token: [281] loop remark
+DEBUG:root:=> token: [282] loop remark
+DEBUG:root:=> token: [283] loop remark
+DEBUG:root:=> token: [284] loop remark
+DEBUG:root:=> token: [285] loop remark
+DEBUG:root:=> token: [286] loop remark
+DEBUG:root:=> token: [287] loop remark
+DEBUG:root:=> token: [288] loop remark
+DEBUG:root:=> token: [289] loop remark
+DEBUG:root:=> token: [290] loop remark
+DEBUG:root:=> token: [291] loop remark
+DEBUG:root:=> token: [292] loop remark
+DEBUG:root:=> token: [293] loop remark
+DEBUG:root:=> token: [294] loop remark
+DEBUG:root:=> token: [295] loop remark
+DEBUG:root:=> token: [296] loop remark
+DEBUG:root:=> token: [297] loop remark
+DEBUG:root:=> token: [298] loop remark
+DEBUG:root:=> token: [299] loop remark
+DEBUG:root:=> token: [300] loop remark
+DEBUG:root:=> token: [301] loop remark
+DEBUG:root:=> token: [302] loop remark
+DEBUG:root:=> token: [303] loop remark
+DEBUG:root:=> token [304]: LOOP END
+DEBUG:root:=> token [305]: skip
+DEBUG:root:=> token [306]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(158)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52ca90>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(158): depth(2) MAIN
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52c978>) added a new inner loop Loop(<ir.Loop object at 0x7f970b52ca90>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(149)
+DEBUG:root:inner loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(158)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52ca90>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(158)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52ca90>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(158)
+DEBUG:root:=> token: [307] loop remark
+DEBUG:root:=> token [308]: LOOP END
+DEBUG:root:=> token [309]: skip
+DEBUG:root:=> token [310]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(151)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52c6a0>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(151)
+DEBUG:root:=> token [311]: loop partition tag
+DEBUG:root:===> parse_loop_partition_tag(loop=<ir.Loop object at 0x7f970b52c6a0>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(151)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52cac8>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(151): depth(2) VECTOR_REMAINDER
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52c6a0>): added remainder loop Loop(<ir.Loop object at 0x7f970b52cac8>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(151)
+DEBUG:root:remainder loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(151)
+DEBUG:root:=> token: [312] loop remark
+DEBUG:root:=> token: [313] loop remark
+DEBUG:root:=> token [314]: LOOP END
+DEBUG:root:=> token [315]: LOOP END
+DEBUG:root:=> token [316]: skip
+DEBUG:root:=> token [317]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(165)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52c9e8>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(165): depth(1) MAIN
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52c710>) added a new inner loop Loop(<ir.Loop object at 0x7f970b52c9e8>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(91)
+DEBUG:root:inner loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(165)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52c9e8>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(165)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52c9e8>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(165)
+DEBUG:root:=> token: [318] loop remark
+DEBUG:root:=> token: [319] loop remark
+DEBUG:root:=> token [320]: skip
+DEBUG:root:=> token [321]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(166)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52cb70>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(166): depth(2) MAIN
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52c9e8>) added a new inner loop Loop(<ir.Loop object at 0x7f970b52cb70>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(165)
+DEBUG:root:inner loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(166)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52cb70>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(166)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52cb70>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(166)
+DEBUG:root:=> token: [322] loop remark
+DEBUG:root:=> token: [323] loop remark
+DEBUG:root:=> token [324]: skip
+DEBUG:root:=> token [325]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(167)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52ccf8>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(167): depth(3) MAIN
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52cb70>) added a new inner loop Loop(<ir.Loop object at 0x7f970b52ccf8>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(166)
+DEBUG:root:inner loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(167)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52ccf8>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(167)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52ccf8>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(167)
+DEBUG:root:=> token: [326] loop remark
+DEBUG:root:=> token: [327] loop remark
+DEBUG:root:=> token: [328] loop remark
+DEBUG:root:=> token: [329] loop remark
+DEBUG:root:=> token: [330] loop remark
+DEBUG:root:=> token: [331] loop remark
+DEBUG:root:=> token: [332] loop remark
+DEBUG:root:=> token: [333] loop remark
+DEBUG:root:=> token: [334] loop remark
+DEBUG:root:=> token: [335] loop remark
+DEBUG:root:=> token: [336] loop remark
+DEBUG:root:=> token: [337] loop remark
+DEBUG:root:=> token: [338] loop remark
+DEBUG:root:=> token: [339] loop remark
+DEBUG:root:=> token: [340] loop remark
+DEBUG:root:=> token: [341] loop remark
+DEBUG:root:=> token: [342] loop remark
+DEBUG:root:=> token: [343] loop remark
+DEBUG:root:=> token: [344] loop remark
+DEBUG:root:=> token [345]: LOOP END
+DEBUG:root:=> token [346]: skip
+DEBUG:root:=> token [347]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(167)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52ccf8>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(167)
+DEBUG:root:=> token [348]: loop partition tag
+DEBUG:root:===> parse_loop_partition_tag(loop=<ir.Loop object at 0x7f970b52ccf8>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(167)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52cd68>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(167): depth(3) VECTOR_REMAINDER
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52ccf8>): added remainder loop Loop(<ir.Loop object at 0x7f970b52cd68>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(167)
+DEBUG:root:remainder loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(167)
+DEBUG:root:=> token: [349] loop remark
+DEBUG:root:=> token [350]: LOOP END
+DEBUG:root:=> token [351]: LOOP END
+DEBUG:root:=> token [352]: LOOP END
+DEBUG:root:=> token [353]: skip
+DEBUG:root:=> token [354]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(176)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52cc88>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(176): depth(1) MAIN
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52c710>) added a new inner loop Loop(<ir.Loop object at 0x7f970b52cc88>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(91)
+DEBUG:root:inner loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(176)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52cc88>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(176)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52cc88>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(176)
+DEBUG:root:=> token: [355] loop remark
+DEBUG:root:=> token: [356] loop remark
+DEBUG:root:=> token [357]: skip
+DEBUG:root:=> token [358]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(178)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52ce80>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(178): depth(2) MAIN
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52cc88>) added a new inner loop Loop(<ir.Loop object at 0x7f970b52ce80>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(176)
+DEBUG:root:inner loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(178)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52ce80>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(178)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52ce80>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(178)
+DEBUG:root:=> token: [359] loop remark
+DEBUG:root:=> token [360]: skip
+DEBUG:root:=> token: [361] loop remark
+DEBUG:root:=> token: [362] loop remark
+DEBUG:root:=> token: [363] loop remark
+DEBUG:root:=> token: [364] loop remark
+DEBUG:root:=> token: [365] loop remark
+DEBUG:root:=> token: [366] loop remark
+DEBUG:root:=> token: [367] loop remark
+DEBUG:root:=> token: [368] loop remark
+DEBUG:root:=> token: [369] loop remark
+DEBUG:root:=> token: [370] loop remark
+DEBUG:root:=> token: [371] loop remark
+DEBUG:root:=> token: [372] loop remark
+DEBUG:root:=> token: [373] loop remark
+DEBUG:root:=> token: [374] loop remark
+DEBUG:root:=> token: [375] loop remark
+DEBUG:root:=> token: [376] loop remark
+DEBUG:root:=> token: [377] loop remark
+DEBUG:root:=> token: [378] loop remark
+DEBUG:root:=> token: [379] loop remark
+DEBUG:root:=> token: [380] loop remark
+DEBUG:root:=> token: [381] loop remark
+DEBUG:root:=> token: [382] loop remark
+DEBUG:root:=> token: [383] loop remark
+DEBUG:root:=> token: [384] loop remark
+DEBUG:root:=> token [385]: LOOP END
+DEBUG:root:=> token [386]: skip
+DEBUG:root:=> token [387]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(185)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52cf60>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(185): depth(2) MAIN
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52cc88>) added a new inner loop Loop(<ir.Loop object at 0x7f970b52cf60>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(176)
+DEBUG:root:inner loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(185)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52cf60>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(185)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52cf60>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(185)
+DEBUG:root:=> token: [388] loop remark
+DEBUG:root:=> token [389]: LOOP END
+DEBUG:root:=> token [390]: skip
+DEBUG:root:=> token [391]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(178)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52ce80>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(178)
+DEBUG:root:=> token [392]: loop partition tag
+DEBUG:root:===> parse_loop_partition_tag(loop=<ir.Loop object at 0x7f970b52ce80>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(178)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52cf98>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(178): depth(2) VECTOR_REMAINDER
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52ce80>): added remainder loop Loop(<ir.Loop object at 0x7f970b52cf98>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(178)
+DEBUG:root:remainder loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(178)
+DEBUG:root:=> token: [393] loop remark
+DEBUG:root:=> token: [394] loop remark
+DEBUG:root:=> token [395]: LOOP END
+DEBUG:root:=> token [396]: LOOP END
+DEBUG:root:=> token [397]: LOOP END
+DEBUG:root:=> token [398]: skip
+DEBUG:root:=> token [399]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(202)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52cbe0>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(202): depth(0) MAIN
+DEBUG:root:=> added a new top level loop Loop(<ir.Loop object at 0x7f970b52cbe0>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(202)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52cbe0>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(202)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52cbe0>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(202)
+DEBUG:root:=> token: [400] loop remark
+DEBUG:root:=> token: [401] loop remark
+DEBUG:root:=> token: [402] loop remark
+DEBUG:root:=> token: [403] loop remark
+DEBUG:root:=> token: [404] loop remark
+DEBUG:root:=> token [405]: skip
+DEBUG:root:=> token [406]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(203)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52cfd0>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(203): depth(1) MAIN
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52cbe0>) added a new inner loop Loop(<ir.Loop object at 0x7f970b52cfd0>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(202)
+DEBUG:root:inner loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(203)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52cfd0>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(203)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52cfd0>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(203)
+DEBUG:root:=> token: [407] loop remark
+DEBUG:root:=> token: [408] loop remark
+DEBUG:root:=> token: [409] loop remark
+DEBUG:root:=> token: [410] loop remark
+DEBUG:root:=> token [411]: skip
+DEBUG:root:=> token [412]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(204)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52f080>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(204): depth(2) MAIN
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52cfd0>) added a new inner loop Loop(<ir.Loop object at 0x7f970b52f080>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(203)
+DEBUG:root:inner loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(204)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52f080>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(204)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52f080>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(204)
+DEBUG:root:=> token [413]: loop partition tag
+DEBUG:root:===> parse_loop_partition_tag(loop=<ir.Loop object at 0x7f970b52f080>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(204)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52f240>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(204): depth(2) PEEL
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52f080>): added peel loop Loop(<ir.Loop object at 0x7f970b52f240>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(204)
+DEBUG:root:peel loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(204)
+DEBUG:root:=> token: [414] loop remark
+DEBUG:root:=> token: [415] loop remark
+DEBUG:root:=> token [416]: LOOP END
+DEBUG:root:=> token [417]: skip
+DEBUG:root:=> token [418]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(204)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52f080>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(204)
+DEBUG:root:=> token: [419] loop remark
+DEBUG:root:=> token: [420] loop remark
+DEBUG:root:=> token: [421] loop remark
+DEBUG:root:=> token: [422] loop remark
+DEBUG:root:=> token: [423] loop remark
+DEBUG:root:=> token: [424] loop remark
+DEBUG:root:=> token: [425] loop remark
+DEBUG:root:=> token: [426] loop remark
+DEBUG:root:=> token: [427] loop remark
+DEBUG:root:=> token: [428] loop remark
+DEBUG:root:=> token: [429] loop remark
+DEBUG:root:=> token: [430] loop remark
+DEBUG:root:=> token: [431] loop remark
+DEBUG:root:=> token: [432] loop remark
+DEBUG:root:=> token: [433] loop remark
+DEBUG:root:=> token: [434] loop remark
+DEBUG:root:=> token: [435] loop remark
+DEBUG:root:=> token: [436] loop remark
+DEBUG:root:=> token: [437] loop remark
+DEBUG:root:=> token: [438] loop remark
+DEBUG:root:=> token: [439] loop remark
+DEBUG:root:=> token: [440] loop remark
+DEBUG:root:=> token: [441] loop remark
+DEBUG:root:=> token: [442] loop remark
+DEBUG:root:=> token: [443] loop remark
+DEBUG:root:=> token: [444] loop remark
+DEBUG:root:=> token: [445] loop remark
+DEBUG:root:=> token: [446] loop remark
+DEBUG:root:=> token: [447] loop remark
+DEBUG:root:=> token: [448] loop remark
+DEBUG:root:=> token: [449] loop remark
+DEBUG:root:=> token: [450] loop remark
+DEBUG:root:=> token: [451] loop remark
+DEBUG:root:=> token: [452] loop remark
+DEBUG:root:=> token: [453] loop remark
+DEBUG:root:=> token: [454] loop remark
+DEBUG:root:=> token: [455] loop remark
+DEBUG:root:=> token: [456] loop remark
+DEBUG:root:=> token: [457] loop remark
+DEBUG:root:=> token: [458] loop remark
+DEBUG:root:=> token: [459] loop remark
+DEBUG:root:=> token: [460] loop remark
+DEBUG:root:=> token: [461] loop remark
+DEBUG:root:=> token: [462] loop remark
+DEBUG:root:=> token: [463] loop remark
+DEBUG:root:=> token: [464] loop remark
+DEBUG:root:=> token: [465] loop remark
+DEBUG:root:=> token: [466] loop remark
+DEBUG:root:=> token: [467] loop remark
+DEBUG:root:=> token: [468] loop remark
+DEBUG:root:=> token: [469] loop remark
+DEBUG:root:=> token: [470] loop remark
+DEBUG:root:=> token: [471] loop remark
+DEBUG:root:=> token: [472] loop remark
+DEBUG:root:=> token: [473] loop remark
+DEBUG:root:=> token: [474] loop remark
+DEBUG:root:=> token: [475] loop remark
+DEBUG:root:=> token: [476] loop remark
+DEBUG:root:=> token: [477] loop remark
+DEBUG:root:=> token: [478] loop remark
+DEBUG:root:=> token: [479] loop remark
+DEBUG:root:=> token: [480] loop remark
+DEBUG:root:=> token: [481] loop remark
+DEBUG:root:=> token: [482] loop remark
+DEBUG:root:=> token: [483] loop remark
+DEBUG:root:=> token: [484] loop remark
+DEBUG:root:=> token: [485] loop remark
+DEBUG:root:=> token: [486] loop remark
+DEBUG:root:=> token: [487] loop remark
+DEBUG:root:=> token: [488] loop remark
+DEBUG:root:=> token: [489] loop remark
+DEBUG:root:=> token: [490] loop remark
+DEBUG:root:=> token: [491] loop remark
+DEBUG:root:=> token: [492] loop remark
+DEBUG:root:=> token: [493] loop remark
+DEBUG:root:=> token [494]: LOOP END
+DEBUG:root:=> token [495]: skip
+DEBUG:root:=> token [496]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(204)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52f080>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(204)
+DEBUG:root:=> token [497]: loop partition tag
+DEBUG:root:===> parse_loop_partition_tag(loop=<ir.Loop object at 0x7f970b52f080>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(204)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52f2b0>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(204): depth(2) VECTOR_REMAINDER
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52f080>): added remainder loop Loop(<ir.Loop object at 0x7f970b52f2b0>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(204)
+DEBUG:root:remainder loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(204)
+DEBUG:root:=> token: [498] loop remark
+DEBUG:root:=> token [499]: LOOP END
+DEBUG:root:=> token [500]: LOOP END
+DEBUG:root:=> token [501]: skip
+DEBUG:root:=> token [502]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(256)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52f3c8>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(256): depth(1) MAIN
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52cbe0>) added a new inner loop Loop(<ir.Loop object at 0x7f970b52f3c8>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(202)
+DEBUG:root:inner loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(256)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52f3c8>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(256)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52f3c8>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(256)
+DEBUG:root:=> token: [503] loop remark
+DEBUG:root:=> token [504]: skip
+DEBUG:root:=> token: [505] loop remark
+DEBUG:root:=> token: [506] loop remark
+DEBUG:root:=> token: [507] loop remark
+DEBUG:root:=> token: [508] loop remark
+DEBUG:root:=> token [509]: skip
+DEBUG:root:=> token [510]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(257)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52f390>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(257): depth(2) MAIN
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52f3c8>) added a new inner loop Loop(<ir.Loop object at 0x7f970b52f390>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(256)
+DEBUG:root:inner loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(257)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52f390>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(257)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52f390>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(257)
+DEBUG:root:=> token: [511] loop remark
+DEBUG:root:=> token [512]: skip
+DEBUG:root:=> token: [513] loop remark
+DEBUG:root:=> token: [514] loop remark
+DEBUG:root:=> token: [515] loop remark
+DEBUG:root:=> token: [516] loop remark
+DEBUG:root:=> token: [517] loop remark
+DEBUG:root:=> token: [518] loop remark
+DEBUG:root:=> token: [519] loop remark
+DEBUG:root:=> token: [520] loop remark
+DEBUG:root:=> token: [521] loop remark
+DEBUG:root:=> token: [522] loop remark
+DEBUG:root:=> token: [523] loop remark
+DEBUG:root:=> token: [524] loop remark
+DEBUG:root:=> token: [525] loop remark
+DEBUG:root:=> token: [526] loop remark
+DEBUG:root:=> token: [527] loop remark
+DEBUG:root:=> token: [528] loop remark
+DEBUG:root:=> token: [529] loop remark
+DEBUG:root:=> token: [530] loop remark
+DEBUG:root:=> token: [531] loop remark
+DEBUG:root:=> token: [532] loop remark
+DEBUG:root:=> token: [533] loop remark
+DEBUG:root:=> token: [534] loop remark
+DEBUG:root:=> token: [535] loop remark
+DEBUG:root:=> token: [536] loop remark
+DEBUG:root:=> token [537]: LOOP END
+DEBUG:root:=> token [538]: skip
+DEBUG:root:=> token [539]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(266)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52f4e0>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(266): depth(2) MAIN
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52f3c8>) added a new inner loop Loop(<ir.Loop object at 0x7f970b52f4e0>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(256)
+DEBUG:root:inner loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(266)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52f4e0>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(266)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52f4e0>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(266)
+DEBUG:root:=> token: [540] loop remark
+DEBUG:root:=> token [541]: LOOP END
+DEBUG:root:=> token [542]: skip
+DEBUG:root:=> token [543]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(257)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52f390>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(257)
+DEBUG:root:=> token [544]: loop partition tag
+DEBUG:root:===> parse_loop_partition_tag(loop=<ir.Loop object at 0x7f970b52f390>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(257)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52f518>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(257): depth(2) VECTOR_REMAINDER
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52f390>): added remainder loop Loop(<ir.Loop object at 0x7f970b52f518>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(257)
+DEBUG:root:remainder loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(257)
+DEBUG:root:=> token: [545] loop remark
+DEBUG:root:=> token: [546] loop remark
+DEBUG:root:=> token [547]: LOOP END
+DEBUG:root:=> token [548]: LOOP END
+DEBUG:root:=> token [549]: skip
+DEBUG:root:=> token [550]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(265)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52f438>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(265): depth(1) MAIN
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52cbe0>) added a new inner loop Loop(<ir.Loop object at 0x7f970b52f438>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(202)
+DEBUG:root:inner loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(265)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52f438>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(265)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52f438>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(265)
+DEBUG:root:=> token: [551] loop remark
+DEBUG:root:=> token [552]: LOOP END
+DEBUG:root:=> token [553]: skip
+DEBUG:root:=> token [554]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(273)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52f5f8>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(273): depth(1) MAIN
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52cbe0>) added a new inner loop Loop(<ir.Loop object at 0x7f970b52f5f8>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(202)
+DEBUG:root:inner loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(273)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52f5f8>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(273)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52f5f8>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(273)
+DEBUG:root:=> token: [555] loop remark
+DEBUG:root:=> token: [556] loop remark
+DEBUG:root:=> token: [557] loop remark
+DEBUG:root:=> token: [558] loop remark
+DEBUG:root:=> token [559]: skip
+DEBUG:root:=> token [560]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(274)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52f5c0>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(274): depth(2) MAIN
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52f5f8>) added a new inner loop Loop(<ir.Loop object at 0x7f970b52f5c0>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(273)
+DEBUG:root:inner loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(274)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52f5c0>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(274)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52f5c0>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(274)
+DEBUG:root:=> token: [561] loop remark
+DEBUG:root:=> token: [562] loop remark
+DEBUG:root:=> token: [563] loop remark
+DEBUG:root:=> token: [564] loop remark
+DEBUG:root:=> token: [565] loop remark
+DEBUG:root:=> token: [566] loop remark
+DEBUG:root:=> token: [567] loop remark
+DEBUG:root:=> token: [568] loop remark
+DEBUG:root:=> token: [569] loop remark
+DEBUG:root:=> token: [570] loop remark
+DEBUG:root:=> token: [571] loop remark
+DEBUG:root:=> token: [572] loop remark
+DEBUG:root:=> token: [573] loop remark
+DEBUG:root:=> token: [574] loop remark
+DEBUG:root:=> token: [575] loop remark
+DEBUG:root:=> token: [576] loop remark
+DEBUG:root:=> token: [577] loop remark
+DEBUG:root:=> token: [578] loop remark
+DEBUG:root:=> token: [579] loop remark
+DEBUG:root:=> token: [580] loop remark
+DEBUG:root:=> token [581]: skip
+DEBUG:root:=> token [582]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(275)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52f7b8>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(275): depth(3) MAIN
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52f5c0>) added a new inner loop Loop(<ir.Loop object at 0x7f970b52f7b8>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(274)
+DEBUG:root:inner loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(275)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52f7b8>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(275)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52f7b8>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(275)
+DEBUG:root:=> token: [583] loop remark
+DEBUG:root:=> token [584]: skip
+DEBUG:root:=> token [585]: LOOP END
+DEBUG:root:=> token [586]: LOOP END
+DEBUG:root:=> token [587]: skip
+DEBUG:root:=> token [588]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(274)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52f5c0>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(274)
+DEBUG:root:=> token [589]: loop partition tag
+DEBUG:root:===> parse_loop_partition_tag(loop=<ir.Loop object at 0x7f970b52f5c0>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(274)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52f8d0>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(274): depth(2) VECTOR_REMAINDER
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52f5c0>): added remainder loop Loop(<ir.Loop object at 0x7f970b52f8d0>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(274)
+DEBUG:root:remainder loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(274)
+DEBUG:root:=> token: [590] loop remark
+DEBUG:root:=> token [591]: LOOP END
+DEBUG:root:=> token [592]: LOOP END
+DEBUG:root:=> token [593]: skip
+DEBUG:root:=> token [594]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(285)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52f940>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(285): depth(1) MAIN
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52cbe0>) added a new inner loop Loop(<ir.Loop object at 0x7f970b52f940>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(202)
+DEBUG:root:inner loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(285)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52f940>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(285)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52f940>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(285)
+DEBUG:root:=> token: [595] loop remark
+DEBUG:root:=> token [596]: skip
+DEBUG:root:=> token: [597] loop remark
+DEBUG:root:=> token: [598] loop remark
+DEBUG:root:=> token: [599] loop remark
+DEBUG:root:=> token: [600] loop remark
+DEBUG:root:=> token [601]: skip
+DEBUG:root:=> token [602]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(286)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52f908>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(286): depth(2) MAIN
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52f940>) added a new inner loop Loop(<ir.Loop object at 0x7f970b52f908>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(285)
+DEBUG:root:inner loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(286)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52f908>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(286)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52f908>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(286)
+DEBUG:root:=> token: [603] loop remark
+DEBUG:root:=> token [604]: skip
+DEBUG:root:=> token: [605] loop remark
+DEBUG:root:=> token: [606] loop remark
+DEBUG:root:=> token: [607] loop remark
+DEBUG:root:=> token: [608] loop remark
+DEBUG:root:=> token: [609] loop remark
+DEBUG:root:=> token: [610] loop remark
+DEBUG:root:=> token: [611] loop remark
+DEBUG:root:=> token: [612] loop remark
+DEBUG:root:=> token: [613] loop remark
+DEBUG:root:=> token: [614] loop remark
+DEBUG:root:=> token: [615] loop remark
+DEBUG:root:=> token: [616] loop remark
+DEBUG:root:=> token: [617] loop remark
+DEBUG:root:=> token: [618] loop remark
+DEBUG:root:=> token: [619] loop remark
+DEBUG:root:=> token: [620] loop remark
+DEBUG:root:=> token: [621] loop remark
+DEBUG:root:=> token: [622] loop remark
+DEBUG:root:=> token: [623] loop remark
+DEBUG:root:=> token: [624] loop remark
+DEBUG:root:=> token: [625] loop remark
+DEBUG:root:=> token: [626] loop remark
+DEBUG:root:=> token: [627] loop remark
+DEBUG:root:=> token: [628] loop remark
+DEBUG:root:=> token [629]: LOOP END
+DEBUG:root:=> token [630]: skip
+DEBUG:root:=> token [631]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(295)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52fa58>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(295): depth(2) MAIN
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52f940>) added a new inner loop Loop(<ir.Loop object at 0x7f970b52fa58>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(285)
+DEBUG:root:inner loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(295)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52fa58>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(295)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52fa58>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(295)
+DEBUG:root:=> token: [632] loop remark
+DEBUG:root:=> token [633]: LOOP END
+DEBUG:root:=> token [634]: skip
+DEBUG:root:=> token [635]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(286)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52f908>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(286)
+DEBUG:root:=> token [636]: loop partition tag
+DEBUG:root:===> parse_loop_partition_tag(loop=<ir.Loop object at 0x7f970b52f908>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(286)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52fa90>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(286): depth(2) VECTOR_REMAINDER
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52f908>): added remainder loop Loop(<ir.Loop object at 0x7f970b52fa90>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(286)
+DEBUG:root:remainder loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(286)
+DEBUG:root:=> token: [637] loop remark
+DEBUG:root:=> token: [638] loop remark
+DEBUG:root:=> token [639]: LOOP END
+DEBUG:root:=> token [640]: LOOP END
+DEBUG:root:=> token [641]: skip
+DEBUG:root:=> token [642]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(294)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52f9b0>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(294): depth(1) MAIN
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52cbe0>) added a new inner loop Loop(<ir.Loop object at 0x7f970b52f9b0>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(202)
+DEBUG:root:inner loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(294)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52f9b0>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(294)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52f9b0>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(294)
+DEBUG:root:=> token: [643] loop remark
+DEBUG:root:=> token [644]: LOOP END
+DEBUG:root:=> token [645]: LOOP END
+DEBUG:root:=> token [646]: skip
+DEBUG:root:=> token [647]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(312)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52cf28>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(312): depth(0) MAIN
+DEBUG:root:=> added a new top level loop Loop(<ir.Loop object at 0x7f970b52cf28>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(312)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52cf28>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(312)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52cf28>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(312)
+DEBUG:root:=> token: [648] loop remark
+DEBUG:root:=> token: [649] loop remark
+DEBUG:root:=> token: [650] loop remark
+DEBUG:root:=> token: [651] loop remark
+DEBUG:root:=> token [652]: skip
+DEBUG:root:=> token [653]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(312)
+DEBUG:root:=> token: [654] loop remark
+DEBUG:root:=> token: [655] loop remark
+DEBUG:root:=> token [656]: skip
+DEBUG:root:=> token [657]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(312)
+DEBUG:root:=> token: [658] loop remark
+DEBUG:root:=> token: [659] loop remark
+DEBUG:root:=> token: [660] loop remark
+DEBUG:root:=> token [661]: skip
+DEBUG:root:=> token [662]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(312)
+DEBUG:root:=> token: [663] loop remark
+DEBUG:root:=> token: [664] loop remark
+DEBUG:root:=> token: [665] loop remark
+DEBUG:root:=> token [666]: skip
+DEBUG:root:=> token [667]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(313)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52fac8>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(313): depth(1) MAIN
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52cf28>) added a new inner loop Loop(<ir.Loop object at 0x7f970b52fac8>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(312)
+DEBUG:root:inner loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(313)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52fac8>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(313)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52fac8>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(313)
+DEBUG:root:=> token: [668] loop remark
+DEBUG:root:=> token: [669] loop remark
+DEBUG:root:=> token: [670] loop remark
+DEBUG:root:=> token [671]: skip
+DEBUG:root:=> token [672]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(314)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52fc18>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(314): depth(2) MAIN
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52fac8>) added a new inner loop Loop(<ir.Loop object at 0x7f970b52fc18>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(313)
+DEBUG:root:inner loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(314)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52fc18>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(314)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52fc18>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(314)
+DEBUG:root:=> token: [673] loop remark
+DEBUG:root:=> token: [674] loop remark
+DEBUG:root:=> token: [675] loop remark
+DEBUG:root:=> token: [676] loop remark
+DEBUG:root:=> token: [677] loop remark
+DEBUG:root:=> token: [678] loop remark
+DEBUG:root:=> token: [679] loop remark
+DEBUG:root:=> token: [680] loop remark
+DEBUG:root:=> token: [681] loop remark
+DEBUG:root:=> token: [682] loop remark
+DEBUG:root:=> token: [683] loop remark
+DEBUG:root:=> token: [684] loop remark
+DEBUG:root:=> token: [685] loop remark
+DEBUG:root:=> token: [686] loop remark
+DEBUG:root:=> token: [687] loop remark
+DEBUG:root:=> token: [688] loop remark
+DEBUG:root:=> token: [689] loop remark
+DEBUG:root:=> token: [690] loop remark
+DEBUG:root:=> token: [691] loop remark
+DEBUG:root:=> token: [692] loop remark
+DEBUG:root:=> token: [693] loop remark
+DEBUG:root:=> token: [694] loop remark
+DEBUG:root:=> token: [695] loop remark
+DEBUG:root:=> token: [696] loop remark
+DEBUG:root:=> token: [697] loop remark
+DEBUG:root:=> token: [698] loop remark
+DEBUG:root:=> token: [699] loop remark
+DEBUG:root:=> token: [700] loop remark
+DEBUG:root:=> token: [701] loop remark
+DEBUG:root:=> token: [702] loop remark
+DEBUG:root:=> token: [703] loop remark
+DEBUG:root:=> token: [704] loop remark
+DEBUG:root:=> token: [705] loop remark
+DEBUG:root:=> token: [706] loop remark
+DEBUG:root:=> token: [707] loop remark
+DEBUG:root:=> token: [708] loop remark
+DEBUG:root:=> token: [709] loop remark
+DEBUG:root:=> token: [710] loop remark
+DEBUG:root:=> token: [711] loop remark
+DEBUG:root:=> token: [712] loop remark
+DEBUG:root:=> token: [713] loop remark
+DEBUG:root:=> token: [714] loop remark
+DEBUG:root:=> token: [715] loop remark
+DEBUG:root:=> token: [716] loop remark
+DEBUG:root:=> token: [717] loop remark
+DEBUG:root:=> token: [718] loop remark
+DEBUG:root:=> token: [719] loop remark
+DEBUG:root:=> token: [720] loop remark
+DEBUG:root:=> token: [721] loop remark
+DEBUG:root:=> token: [722] loop remark
+DEBUG:root:=> token: [723] loop remark
+DEBUG:root:=> token: [724] loop remark
+DEBUG:root:=> token: [725] loop remark
+DEBUG:root:=> token: [726] loop remark
+DEBUG:root:=> token: [727] loop remark
+DEBUG:root:=> token: [728] loop remark
+DEBUG:root:=> token: [729] loop remark
+DEBUG:root:=> token: [730] loop remark
+DEBUG:root:=> token: [731] loop remark
+DEBUG:root:=> token: [732] loop remark
+DEBUG:root:=> token: [733] loop remark
+DEBUG:root:=> token: [734] loop remark
+DEBUG:root:=> token: [735] loop remark
+DEBUG:root:=> token: [736] loop remark
+DEBUG:root:=> token: [737] loop remark
+DEBUG:root:=> token: [738] loop remark
+DEBUG:root:=> token: [739] loop remark
+DEBUG:root:=> token: [740] loop remark
+DEBUG:root:=> token: [741] loop remark
+DEBUG:root:=> token: [742] loop remark
+DEBUG:root:=> token: [743] loop remark
+DEBUG:root:=> token: [744] loop remark
+DEBUG:root:=> token: [745] loop remark
+DEBUG:root:=> token: [746] loop remark
+DEBUG:root:=> token [747]: LOOP END
+DEBUG:root:=> token [748]: skip
+DEBUG:root:=> token [749]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(314)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52fc18>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(314)
+DEBUG:root:=> token [750]: loop partition tag
+DEBUG:root:===> parse_loop_partition_tag(loop=<ir.Loop object at 0x7f970b52fc18>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(314)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52fd68>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(314): depth(2) VECTOR_REMAINDER
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52fc18>): added remainder loop Loop(<ir.Loop object at 0x7f970b52fd68>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(314)
+DEBUG:root:remainder loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(314)
+DEBUG:root:=> token: [751] loop remark
+DEBUG:root:=> token [752]: LOOP END
+DEBUG:root:=> token [753]: LOOP END
+DEBUG:root:=> token [754]: LOOP END
+DEBUG:root:=> token [755]: LOOP END
+DEBUG:root:=> token [756]: LOOP END
+DEBUG:root:=> token [757]: LOOP END
+DEBUG:root:=> token [758]: skip
+DEBUG:root:=> token [759]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(369)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52fbe0>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(369): depth(0) MAIN
+DEBUG:root:=> added a new top level loop Loop(<ir.Loop object at 0x7f970b52fbe0>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(369)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52fbe0>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(369)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52fbe0>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(369)
+DEBUG:root:=> token: [760] loop remark
+DEBUG:root:=> token [761]: skip
+DEBUG:root:=> token: [762] loop remark
+DEBUG:root:=> token: [763] loop remark
+DEBUG:root:=> token: [764] loop remark
+DEBUG:root:=> token: [765] loop remark
+DEBUG:root:=> token [766]: skip
+DEBUG:root:=> token [767]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(370)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52fd30>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(370): depth(1) MAIN
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52fbe0>) added a new inner loop Loop(<ir.Loop object at 0x7f970b52fd30>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(369)
+DEBUG:root:inner loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(370)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52fd30>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(370)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52fd30>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(370)
+DEBUG:root:=> token: [768] loop remark
+DEBUG:root:=> token: [769] loop remark
+DEBUG:root:=> token [770]: skip
+DEBUG:root:=> token [771]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(371)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52ff60>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(371): depth(2) MAIN
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52fd30>) added a new inner loop Loop(<ir.Loop object at 0x7f970b52ff60>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(370)
+DEBUG:root:inner loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(371)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52ff60>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(371)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52ff60>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(371)
+DEBUG:root:=> token: [772] loop remark
+DEBUG:root:=> token: [773] loop remark
+DEBUG:root:=> token: [774] loop remark
+DEBUG:root:=> token: [775] loop remark
+DEBUG:root:=> token: [776] loop remark
+DEBUG:root:=> token: [777] loop remark
+DEBUG:root:=> token: [778] loop remark
+DEBUG:root:=> token: [779] loop remark
+DEBUG:root:=> token: [780] loop remark
+DEBUG:root:=> token: [781] loop remark
+DEBUG:root:=> token: [782] loop remark
+DEBUG:root:=> token: [783] loop remark
+DEBUG:root:=> token: [784] loop remark
+DEBUG:root:=> token: [785] loop remark
+DEBUG:root:=> token: [786] loop remark
+DEBUG:root:=> token: [787] loop remark
+DEBUG:root:=> token: [788] loop remark
+DEBUG:root:=> token [789]: LOOP END
+DEBUG:root:=> token [790]: skip
+DEBUG:root:=> token [791]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(371)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52ff60>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(371)
+DEBUG:root:=> token [792]: loop partition tag
+DEBUG:root:===> parse_loop_partition_tag(loop=<ir.Loop object at 0x7f970b52ff60>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(371)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52ffd0>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(371): depth(2) VECTOR_REMAINDER
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52ff60>): added remainder loop Loop(<ir.Loop object at 0x7f970b52ffd0>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(371)
+DEBUG:root:remainder loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(371)
+DEBUG:root:=> token: [793] loop remark
+DEBUG:root:=> token [794]: LOOP END
+DEBUG:root:=> token [795]: LOOP END
+DEBUG:root:=> token [796]: skip
+DEBUG:root:=> token [797]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(382)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52ff98>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(382): depth(1) MAIN
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52fbe0>) added a new inner loop Loop(<ir.Loop object at 0x7f970b52ff98>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(369)
+DEBUG:root:inner loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(382)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52ff98>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(382)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52ff98>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(382)
+DEBUG:root:=> token: [798] loop remark
+DEBUG:root:=> token: [799] loop remark
+DEBUG:root:=> token [800]: skip
+DEBUG:root:=> token [801]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(383)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52a080>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(383): depth(2) MAIN
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52ff98>) added a new inner loop Loop(<ir.Loop object at 0x7f970b52a080>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(382)
+DEBUG:root:inner loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(383)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52a080>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(383)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52a080>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(383)
+DEBUG:root:=> token: [802] loop remark
+DEBUG:root:=> token: [803] loop remark
+DEBUG:root:=> token: [804] loop remark
+DEBUG:root:=> token: [805] loop remark
+DEBUG:root:=> token: [806] loop remark
+DEBUG:root:=> token: [807] loop remark
+DEBUG:root:=> token: [808] loop remark
+DEBUG:root:=> token: [809] loop remark
+DEBUG:root:=> token: [810] loop remark
+DEBUG:root:=> token: [811] loop remark
+DEBUG:root:=> token: [812] loop remark
+DEBUG:root:=> token: [813] loop remark
+DEBUG:root:=> token: [814] loop remark
+DEBUG:root:=> token: [815] loop remark
+DEBUG:root:=> token: [816] loop remark
+DEBUG:root:=> token: [817] loop remark
+DEBUG:root:=> token: [818] loop remark
+DEBUG:root:=> token: [819] loop remark
+DEBUG:root:=> token [820]: LOOP END
+DEBUG:root:=> token [821]: skip
+DEBUG:root:=> token [822]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(383)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52a080>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(383)
+DEBUG:root:=> token [823]: loop partition tag
+DEBUG:root:===> parse_loop_partition_tag(loop=<ir.Loop object at 0x7f970b52a080>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(383)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52a198>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(383): depth(2) VECTOR_REMAINDER
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52a080>): added remainder loop Loop(<ir.Loop object at 0x7f970b52a198>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(383)
+DEBUG:root:remainder loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(383)
+DEBUG:root:=> token: [824] loop remark
+DEBUG:root:=> token [825]: LOOP END
+DEBUG:root:=> token [826]: LOOP END
+DEBUG:root:=> token [827]: LOOP END
+DEBUG:root:=> token [828]: skip
+DEBUG:root:=> token [829]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(381)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52fc50>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(381): depth(0) MAIN
+DEBUG:root:=> added a new top level loop Loop(<ir.Loop object at 0x7f970b52fc50>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(381)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52fc50>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(381)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52fc50>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(381)
+DEBUG:root:=> token: [830] loop remark
+DEBUG:root:=> token [831]: LOOP END
+DEBUG:root:=> token [832]: skip
+DEBUG:root:=> token [833]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(392)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52a048>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(392): depth(0) MAIN
+DEBUG:root:=> added a new top level loop Loop(<ir.Loop object at 0x7f970b52a048>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(392)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52a048>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(392)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52a048>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(392)
+DEBUG:root:=> token: [834] loop remark
+DEBUG:root:=> token: [835] loop remark
+DEBUG:root:=> token: [836] loop remark
+DEBUG:root:=> token: [837] loop remark
+DEBUG:root:=> token [838]: skip
+DEBUG:root:=> token [839]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(393)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52a2b0>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(393): depth(1) MAIN
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52a048>) added a new inner loop Loop(<ir.Loop object at 0x7f970b52a2b0>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(392)
+DEBUG:root:inner loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(393)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52a2b0>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(393)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52a2b0>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(393)
+DEBUG:root:=> token: [840] loop remark
+DEBUG:root:=> token: [841] loop remark
+DEBUG:root:=> token [842]: skip
+DEBUG:root:=> token [843]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(394)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52a470>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(394): depth(2) MAIN
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52a2b0>) added a new inner loop Loop(<ir.Loop object at 0x7f970b52a470>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(393)
+DEBUG:root:inner loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(394)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52a470>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(394)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52a470>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(394)
+DEBUG:root:=> token: [844] loop remark
+DEBUG:root:=> token: [845] loop remark
+DEBUG:root:=> token: [846] loop remark
+DEBUG:root:=> token: [847] loop remark
+DEBUG:root:=> token: [848] loop remark
+DEBUG:root:=> token: [849] loop remark
+DEBUG:root:=> token: [850] loop remark
+DEBUG:root:=> token: [851] loop remark
+DEBUG:root:=> token: [852] loop remark
+DEBUG:root:=> token: [853] loop remark
+DEBUG:root:=> token: [854] loop remark
+DEBUG:root:=> token: [855] loop remark
+DEBUG:root:=> token: [856] loop remark
+DEBUG:root:=> token: [857] loop remark
+DEBUG:root:=> token: [858] loop remark
+DEBUG:root:=> token: [859] loop remark
+DEBUG:root:=> token: [860] loop remark
+DEBUG:root:=> token: [861] loop remark
+DEBUG:root:=> token: [862] loop remark
+DEBUG:root:=> token: [863] loop remark
+DEBUG:root:=> token [864]: skip
+DEBUG:root:=> token [865]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(395)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52a550>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(395): depth(3) MAIN
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52a470>) added a new inner loop Loop(<ir.Loop object at 0x7f970b52a550>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(394)
+DEBUG:root:inner loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(395)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52a550>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(395)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52a550>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(395)
+DEBUG:root:=> token: [866] loop remark
+DEBUG:root:=> token [867]: skip
+DEBUG:root:=> token [868]: LOOP END
+DEBUG:root:=> token [869]: LOOP END
+DEBUG:root:=> token [870]: skip
+DEBUG:root:=> token [871]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(394)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52a470>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(394)
+DEBUG:root:=> token [872]: loop partition tag
+DEBUG:root:===> parse_loop_partition_tag(loop=<ir.Loop object at 0x7f970b52a470>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(394)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52a668>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(394): depth(2) VECTOR_REMAINDER
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52a470>): added remainder loop Loop(<ir.Loop object at 0x7f970b52a668>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(394)
+DEBUG:root:remainder loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(394)
+DEBUG:root:=> token: [873] loop remark
+DEBUG:root:=> token [874]: LOOP END
+DEBUG:root:=> token [875]: LOOP END
+DEBUG:root:=> token [876]: LOOP END
+DEBUG:root:=> token [877]: skip
+DEBUG:root:=> token [878]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(407)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52a400>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(407): depth(0) MAIN
+DEBUG:root:=> added a new top level loop Loop(<ir.Loop object at 0x7f970b52a400>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(407)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52a400>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(407)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52a400>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(407)
+DEBUG:root:=> token: [879] loop remark
+DEBUG:root:=> token [880]: skip
+DEBUG:root:=> token: [881] loop remark
+DEBUG:root:=> token: [882] loop remark
+DEBUG:root:=> token: [883] loop remark
+DEBUG:root:=> token: [884] loop remark
+DEBUG:root:=> token [885]: skip
+DEBUG:root:=> token [886]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(408)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52a518>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(408): depth(1) MAIN
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52a400>) added a new inner loop Loop(<ir.Loop object at 0x7f970b52a518>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(407)
+DEBUG:root:inner loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(408)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52a518>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(408)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52a518>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(408)
+DEBUG:root:=> token: [887] loop remark
+DEBUG:root:=> token: [888] loop remark
+DEBUG:root:=> token [889]: skip
+DEBUG:root:=> token [890]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(409)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52a780>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(409): depth(2) MAIN
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52a518>) added a new inner loop Loop(<ir.Loop object at 0x7f970b52a780>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(408)
+DEBUG:root:inner loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(409)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52a780>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(409)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52a780>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(409)
+DEBUG:root:=> token: [891] loop remark
+DEBUG:root:=> token: [892] loop remark
+DEBUG:root:=> token: [893] loop remark
+DEBUG:root:=> token: [894] loop remark
+DEBUG:root:=> token: [895] loop remark
+DEBUG:root:=> token: [896] loop remark
+DEBUG:root:=> token: [897] loop remark
+DEBUG:root:=> token: [898] loop remark
+DEBUG:root:=> token: [899] loop remark
+DEBUG:root:=> token: [900] loop remark
+DEBUG:root:=> token: [901] loop remark
+DEBUG:root:=> token: [902] loop remark
+DEBUG:root:=> token: [903] loop remark
+DEBUG:root:=> token: [904] loop remark
+DEBUG:root:=> token: [905] loop remark
+DEBUG:root:=> token: [906] loop remark
+DEBUG:root:=> token: [907] loop remark
+DEBUG:root:=> token: [908] loop remark
+DEBUG:root:=> token [909]: LOOP END
+DEBUG:root:=> token [910]: skip
+DEBUG:root:=> token [911]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(409)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52a780>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(409)
+DEBUG:root:=> token [912]: loop partition tag
+DEBUG:root:===> parse_loop_partition_tag(loop=<ir.Loop object at 0x7f970b52a780>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(409)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52a7b8>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(409): depth(2) VECTOR_REMAINDER
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52a780>): added remainder loop Loop(<ir.Loop object at 0x7f970b52a7b8>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(409)
+DEBUG:root:remainder loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(409)
+DEBUG:root:=> token: [913] loop remark
+DEBUG:root:=> token [914]: LOOP END
+DEBUG:root:=> token [915]: LOOP END
+DEBUG:root:=> token [916]: skip
+DEBUG:root:=> token [917]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(420)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52a940>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(420): depth(1) MAIN
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52a400>) added a new inner loop Loop(<ir.Loop object at 0x7f970b52a940>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(407)
+DEBUG:root:inner loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(420)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52a940>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(420)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52a940>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(420)
+DEBUG:root:=> token: [918] loop remark
+DEBUG:root:=> token: [919] loop remark
+DEBUG:root:=> token [920]: skip
+DEBUG:root:=> token [921]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(421)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52a828>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(421): depth(2) MAIN
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52a940>) added a new inner loop Loop(<ir.Loop object at 0x7f970b52a828>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(420)
+DEBUG:root:inner loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(421)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52a828>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(421)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52a828>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(421)
+DEBUG:root:=> token: [922] loop remark
+DEBUG:root:=> token: [923] loop remark
+DEBUG:root:=> token: [924] loop remark
+DEBUG:root:=> token: [925] loop remark
+DEBUG:root:=> token: [926] loop remark
+DEBUG:root:=> token: [927] loop remark
+DEBUG:root:=> token: [928] loop remark
+DEBUG:root:=> token: [929] loop remark
+DEBUG:root:=> token: [930] loop remark
+DEBUG:root:=> token: [931] loop remark
+DEBUG:root:=> token: [932] loop remark
+DEBUG:root:=> token: [933] loop remark
+DEBUG:root:=> token: [934] loop remark
+DEBUG:root:=> token: [935] loop remark
+DEBUG:root:=> token: [936] loop remark
+DEBUG:root:=> token: [937] loop remark
+DEBUG:root:=> token: [938] loop remark
+DEBUG:root:=> token [939]: LOOP END
+DEBUG:root:=> token [940]: skip
+DEBUG:root:=> token [941]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(421)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52a828>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(421)
+DEBUG:root:=> token [942]: loop partition tag
+DEBUG:root:===> parse_loop_partition_tag(loop=<ir.Loop object at 0x7f970b52a828>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(421)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52aa58>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(421): depth(2) VECTOR_REMAINDER
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52a828>): added remainder loop Loop(<ir.Loop object at 0x7f970b52aa58>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(421)
+DEBUG:root:remainder loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(421)
+DEBUG:root:=> token: [943] loop remark
+DEBUG:root:=> token [944]: LOOP END
+DEBUG:root:=> token [945]: LOOP END
+DEBUG:root:=> token [946]: LOOP END
+DEBUG:root:=> token [947]: skip
+DEBUG:root:=> token [948]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(419)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52a908>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(419): depth(0) MAIN
+DEBUG:root:=> added a new top level loop Loop(<ir.Loop object at 0x7f970b52a908>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(419)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52a908>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(419)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52a908>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(419)
+DEBUG:root:=> token: [949] loop remark
+DEBUG:root:=> token [950]: LOOP END
+DEBUG:root:=> token [951]: skip
+DEBUG:root:=> token [952]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(432)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52a5f8>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(432): depth(0) MAIN
+DEBUG:root:=> added a new top level loop Loop(<ir.Loop object at 0x7f970b52a5f8>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(432)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52a5f8>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(432)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52a5f8>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(432)
+DEBUG:root:=> token: [953] loop remark
+DEBUG:root:=> token: [954] loop remark
+DEBUG:root:=> token: [955] loop remark
+DEBUG:root:=> token: [956] loop remark
+DEBUG:root:=> token: [957] loop remark
+DEBUG:root:=> token: [958] loop remark
+DEBUG:root:=> token [959]: skip
+DEBUG:root:=> token [960]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(433)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52aac8>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(433): depth(1) MAIN
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52a5f8>) added a new inner loop Loop(<ir.Loop object at 0x7f970b52aac8>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(432)
+DEBUG:root:inner loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(433)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52aac8>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(433)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52aac8>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(433)
+DEBUG:root:=> token: [961] loop remark
+DEBUG:root:=> token: [962] loop remark
+DEBUG:root:=> token [963]: skip
+DEBUG:root:=> token [964]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(434)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52ac50>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(434): depth(2) MAIN
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52aac8>) added a new inner loop Loop(<ir.Loop object at 0x7f970b52ac50>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(433)
+DEBUG:root:inner loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(434)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52ac50>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(434)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52ac50>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(434)
+DEBUG:root:=> token: [965] loop remark
+DEBUG:root:=> token: [966] loop remark
+DEBUG:root:=> token: [967] loop remark
+DEBUG:root:=> token: [968] loop remark
+DEBUG:root:=> token: [969] loop remark
+DEBUG:root:=> token: [970] loop remark
+DEBUG:root:=> token: [971] loop remark
+DEBUG:root:=> token: [972] loop remark
+DEBUG:root:=> token: [973] loop remark
+DEBUG:root:=> token: [974] loop remark
+DEBUG:root:=> token: [975] loop remark
+DEBUG:root:=> token: [976] loop remark
+DEBUG:root:=> token: [977] loop remark
+DEBUG:root:=> token: [978] loop remark
+DEBUG:root:=> token: [979] loop remark
+DEBUG:root:=> token [980]: skip
+DEBUG:root:=> token [981]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(435)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52ad30>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(435): depth(3) MAIN
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52ac50>) added a new inner loop Loop(<ir.Loop object at 0x7f970b52ad30>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(434)
+DEBUG:root:inner loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(435)
+DEBUG:root:=> LoopNestStructure(<ir.LoopNestingStructure object at 0x7f970b521dd8>) added a new loop Loop(<ir.Loop object at 0x7f970b52ad30>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(435)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52ad30>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(435)
+DEBUG:root:=> token: [982] loop remark
+DEBUG:root:=> token [983]: skip
+DEBUG:root:=> token [984]: LOOP END
+DEBUG:root:=> token [985]: LOOP END
+DEBUG:root:=> token [986]: skip
+DEBUG:root:=> token [987]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(434)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52ac50>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(434)
+DEBUG:root:=> token [988]: loop partition tag
+DEBUG:root:===> parse_loop_partition_tag(loop=<ir.Loop object at 0x7f970b52ac50>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(434)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52ae48>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(434): depth(2) VECTOR_REMAINDER
+DEBUG:root:=> Loop(<ir.Loop object at 0x7f970b52ac50>): added remainder loop Loop(<ir.Loop object at 0x7f970b52ae48>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(434)
+DEBUG:root:remainder loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(434)
+DEBUG:root:=> token: [989] loop remark
+DEBUG:root:=> token [990]: LOOP END
+DEBUG:root:=> token [991]: LOOP END
+DEBUG:root:=> token [992]: LOOP END
+DEBUG:root:=> token [993]: skip
+DEBUG:root:=> token [994]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(52)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b521e48>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(52)
+DEBUG:root:=> token: [995] loop remark
+DEBUG:root:=> token: [996] loop remark
+DEBUG:root:=> token [997]: skip
+DEBUG:root:=> token [998]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(53)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b521f98>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(53)
+DEBUG:root:=> token: [999] loop remark
+DEBUG:root:=> token: [1000] loop remark
+DEBUG:root:=> token: [1001] loop remark
+DEBUG:root:=> token [1002]: skip
+DEBUG:root:=> token [1003]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(54)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52c160>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(54)
+DEBUG:root:=> token [1004]: loop partition tag
+DEBUG:root:===> parse_loop_partition_tag(loop=<ir.Loop object at 0x7f970b52c160>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(54)
+DEBUG:root:=> token: [1005] loop remark
+DEBUG:root:=> token: [1006] loop remark
+DEBUG:root:=> token [1007]: LOOP END
+DEBUG:root:=> token [1008]: skip
+DEBUG:root:=> token [1009]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(54)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52c160>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(54)
+DEBUG:root:=> token: [1010] loop remark
+DEBUG:root:=> token: [1011] loop remark
+DEBUG:root:=> token: [1012] loop remark
+DEBUG:root:=> token: [1013] loop remark
+DEBUG:root:=> token: [1014] loop remark
+DEBUG:root:=> token: [1015] loop remark
+DEBUG:root:=> token: [1016] loop remark
+DEBUG:root:=> token: [1017] loop remark
+DEBUG:root:=> token: [1018] loop remark
+DEBUG:root:=> token: [1019] loop remark
+DEBUG:root:=> token: [1020] loop remark
+DEBUG:root:=> token: [1021] loop remark
+DEBUG:root:=> token: [1022] loop remark
+DEBUG:root:=> token: [1023] loop remark
+DEBUG:root:=> token: [1024] loop remark
+DEBUG:root:=> token: [1025] loop remark
+DEBUG:root:=> token: [1026] loop remark
+DEBUG:root:=> token: [1027] loop remark
+DEBUG:root:=> token: [1028] loop remark
+DEBUG:root:=> token: [1029] loop remark
+DEBUG:root:=> token: [1030] loop remark
+DEBUG:root:=> token: [1031] loop remark
+DEBUG:root:=> token: [1032] loop remark
+DEBUG:root:=> token: [1033] loop remark
+DEBUG:root:=> token: [1034] loop remark
+DEBUG:root:=> token: [1035] loop remark
+DEBUG:root:=> token: [1036] loop remark
+DEBUG:root:=> token: [1037] loop remark
+DEBUG:root:=> token: [1038] loop remark
+DEBUG:root:=> token: [1039] loop remark
+DEBUG:root:=> token: [1040] loop remark
+DEBUG:root:=> token: [1041] loop remark
+DEBUG:root:=> token [1042]: LOOP END
+DEBUG:root:=> token [1043]: skip
+DEBUG:root:=> token [1044]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(54)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52c160>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(54)
+DEBUG:root:=> token [1045]: loop partition tag
+DEBUG:root:===> parse_loop_partition_tag(loop=<ir.Loop object at 0x7f970b52c160>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(54)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52acf8>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(54): depth(2) VECTOR_REMAINDER
+DEBUG:root:=> token: [1046] loop remark
+DEBUG:root:=> token [1047]: LOOP END
+DEBUG:root:=> token [1048]: LOOP END
+DEBUG:root:=> token [1049]: LOOP END
+DEBUG:root:=> token [1050]: skip
+DEBUG:root:=> token [1051]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(75)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b521f28>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(75)
+DEBUG:root:=> token: [1052] loop remark
+DEBUG:root:=> token: [1053] loop remark
+DEBUG:root:=> token [1054]: skip
+DEBUG:root:=> token [1055]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(76)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52c2b0>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(76)
+DEBUG:root:=> token: [1056] loop remark
+DEBUG:root:=> token: [1057] loop remark
+DEBUG:root:=> token: [1058] loop remark
+DEBUG:root:=> token [1059]: skip
+DEBUG:root:=> token [1060]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(77)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52c438>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(77)
+DEBUG:root:=> token: [1061] loop remark
+DEBUG:root:=> token: [1062] loop remark
+DEBUG:root:=> token: [1063] loop remark
+DEBUG:root:=> token [1064]: skip
+DEBUG:root:=> token [1065]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(78)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52c550>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(78)
+DEBUG:root:=> token: [1066] loop remark
+DEBUG:root:=> token: [1067] loop remark
+DEBUG:root:=> token: [1068] loop remark
+DEBUG:root:=> token: [1069] loop remark
+DEBUG:root:=> token: [1070] loop remark
+DEBUG:root:=> token: [1071] loop remark
+DEBUG:root:=> token: [1072] loop remark
+DEBUG:root:=> token: [1073] loop remark
+DEBUG:root:=> token: [1074] loop remark
+DEBUG:root:=> token: [1075] loop remark
+DEBUG:root:=> token: [1076] loop remark
+DEBUG:root:=> token: [1077] loop remark
+DEBUG:root:=> token: [1078] loop remark
+DEBUG:root:=> token: [1079] loop remark
+DEBUG:root:=> token: [1080] loop remark
+DEBUG:root:=> token [1081]: LOOP END
+DEBUG:root:=> token [1082]: skip
+DEBUG:root:=> token [1083]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(78)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52c550>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(78)
+DEBUG:root:=> token [1084]: loop partition tag
+DEBUG:root:===> parse_loop_partition_tag(loop=<ir.Loop object at 0x7f970b52c550>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(78)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52af60>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(78): depth(3) VECTOR_REMAINDER
+DEBUG:root:=> token: [1085] loop remark
+DEBUG:root:=> token [1086]: LOOP END
+DEBUG:root:=> token [1087]: LOOP END
+DEBUG:root:=> token [1088]: LOOP END
+DEBUG:root:=> token [1089]: LOOP END
+DEBUG:root:=> token [1090]: skip
+DEBUG:root:=> token [1091]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(91)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52c710>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(91)
+DEBUG:root:=> token: [1092] loop remark
+DEBUG:root:=> token: [1093] loop remark
+DEBUG:root:=> token [1094]: skip
+DEBUG:root:=> token [1095]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(92)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52c3c8>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(92)
+DEBUG:root:=> token: [1096] loop remark
+DEBUG:root:=> token: [1097] loop remark
+DEBUG:root:=> token: [1098] loop remark
+DEBUG:root:=> token [1099]: skip
+DEBUG:root:=> token [1100]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(93)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52c748>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(93)
+DEBUG:root:=> token [1101]: loop partition tag
+DEBUG:root:===> parse_loop_partition_tag(loop=<ir.Loop object at 0x7f970b52c748>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(93)
+DEBUG:root:=> token: [1102] loop remark
+DEBUG:root:=> token: [1103] loop remark
+DEBUG:root:=> token [1104]: LOOP END
+DEBUG:root:=> token [1105]: skip
+DEBUG:root:=> token [1106]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(93)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52c748>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(93)
+DEBUG:root:=> token: [1107] loop remark
+DEBUG:root:=> token: [1108] loop remark
+DEBUG:root:=> token: [1109] loop remark
+DEBUG:root:=> token: [1110] loop remark
+DEBUG:root:=> token: [1111] loop remark
+DEBUG:root:=> token: [1112] loop remark
+DEBUG:root:=> token: [1113] loop remark
+DEBUG:root:=> token: [1114] loop remark
+DEBUG:root:=> token: [1115] loop remark
+DEBUG:root:=> token: [1116] loop remark
+DEBUG:root:=> token: [1117] loop remark
+DEBUG:root:=> token: [1118] loop remark
+DEBUG:root:=> token: [1119] loop remark
+DEBUG:root:=> token: [1120] loop remark
+DEBUG:root:=> token: [1121] loop remark
+DEBUG:root:=> token: [1122] loop remark
+DEBUG:root:=> token: [1123] loop remark
+DEBUG:root:=> token: [1124] loop remark
+DEBUG:root:=> token: [1125] loop remark
+DEBUG:root:=> token: [1126] loop remark
+DEBUG:root:=> token: [1127] loop remark
+DEBUG:root:=> token: [1128] loop remark
+DEBUG:root:=> token: [1129] loop remark
+DEBUG:root:=> token: [1130] loop remark
+DEBUG:root:=> token: [1131] loop remark
+DEBUG:root:=> token: [1132] loop remark
+DEBUG:root:=> token: [1133] loop remark
+DEBUG:root:=> token: [1134] loop remark
+DEBUG:root:=> token: [1135] loop remark
+DEBUG:root:=> token: [1136] loop remark
+DEBUG:root:=> token: [1137] loop remark
+DEBUG:root:=> token: [1138] loop remark
+DEBUG:root:=> token: [1139] loop remark
+DEBUG:root:=> token: [1140] loop remark
+DEBUG:root:=> token: [1141] loop remark
+DEBUG:root:=> token: [1142] loop remark
+DEBUG:root:=> token: [1143] loop remark
+DEBUG:root:=> token: [1144] loop remark
+DEBUG:root:=> token: [1145] loop remark
+DEBUG:root:=> token: [1146] loop remark
+DEBUG:root:=> token: [1147] loop remark
+DEBUG:root:=> token: [1148] loop remark
+DEBUG:root:=> token: [1149] loop remark
+DEBUG:root:=> token: [1150] loop remark
+DEBUG:root:=> token: [1151] loop remark
+DEBUG:root:=> token: [1152] loop remark
+DEBUG:root:=> token: [1153] loop remark
+DEBUG:root:=> token: [1154] loop remark
+DEBUG:root:=> token: [1155] loop remark
+DEBUG:root:=> token: [1156] loop remark
+DEBUG:root:=> token: [1157] loop remark
+DEBUG:root:=> token: [1158] loop remark
+DEBUG:root:=> token: [1159] loop remark
+DEBUG:root:=> token: [1160] loop remark
+DEBUG:root:=> token: [1161] loop remark
+DEBUG:root:=> token: [1162] loop remark
+DEBUG:root:=> token: [1163] loop remark
+DEBUG:root:=> token: [1164] loop remark
+DEBUG:root:=> token: [1165] loop remark
+DEBUG:root:=> token: [1166] loop remark
+DEBUG:root:=> token: [1167] loop remark
+DEBUG:root:=> token: [1168] loop remark
+DEBUG:root:=> token: [1169] loop remark
+DEBUG:root:=> token: [1170] loop remark
+DEBUG:root:=> token: [1171] loop remark
+DEBUG:root:=> token: [1172] loop remark
+DEBUG:root:=> token: [1173] loop remark
+DEBUG:root:=> token: [1174] loop remark
+DEBUG:root:=> token: [1175] loop remark
+DEBUG:root:=> token: [1176] loop remark
+DEBUG:root:=> token: [1177] loop remark
+DEBUG:root:=> token: [1178] loop remark
+DEBUG:root:=> token: [1179] loop remark
+DEBUG:root:=> token: [1180] loop remark
+DEBUG:root:=> token: [1181] loop remark
+DEBUG:root:=> token [1182]: LOOP END
+DEBUG:root:=> token [1183]: skip
+DEBUG:root:=> token [1184]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(93)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52c748>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(93)
+DEBUG:root:=> token [1185]: loop partition tag
+DEBUG:root:===> parse_loop_partition_tag(loop=<ir.Loop object at 0x7f970b52c748>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(93)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52afd0>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(93): depth(2) VECTOR_REMAINDER
+DEBUG:root:=> token: [1186] loop remark
+DEBUG:root:=> token [1187]: LOOP END
+DEBUG:root:=> token [1188]: LOOP END
+DEBUG:root:=> token [1189]: skip
+DEBUG:root:=> token [1190]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(149)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52c978>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(149)
+DEBUG:root:=> token: [1191] loop remark
+DEBUG:root:=> token: [1192] loop remark
+DEBUG:root:=> token: [1193] loop remark
+DEBUG:root:=> token [1194]: skip
+DEBUG:root:=> token [1195]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(151)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52c6a0>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(151)
+DEBUG:root:=> token: [1196] loop remark
+DEBUG:root:=> token: [1197] loop remark
+DEBUG:root:=> token: [1198] loop remark
+DEBUG:root:=> token: [1199] loop remark
+DEBUG:root:=> token: [1200] loop remark
+DEBUG:root:=> token: [1201] loop remark
+DEBUG:root:=> token: [1202] loop remark
+DEBUG:root:=> token: [1203] loop remark
+DEBUG:root:=> token: [1204] loop remark
+DEBUG:root:=> token: [1205] loop remark
+DEBUG:root:=> token: [1206] loop remark
+DEBUG:root:=> token: [1207] loop remark
+DEBUG:root:=> token: [1208] loop remark
+DEBUG:root:=> token: [1209] loop remark
+DEBUG:root:=> token: [1210] loop remark
+DEBUG:root:=> token: [1211] loop remark
+DEBUG:root:=> token: [1212] loop remark
+DEBUG:root:=> token: [1213] loop remark
+DEBUG:root:=> token: [1214] loop remark
+DEBUG:root:=> token: [1215] loop remark
+DEBUG:root:=> token: [1216] loop remark
+DEBUG:root:=> token: [1217] loop remark
+DEBUG:root:=> token: [1218] loop remark
+DEBUG:root:=> token: [1219] loop remark
+DEBUG:root:=> token: [1220] loop remark
+DEBUG:root:=> token [1221]: LOOP END
+DEBUG:root:=> token [1222]: skip
+DEBUG:root:=> token [1223]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(151)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52c6a0>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(151)
+DEBUG:root:=> token [1224]: loop partition tag
+DEBUG:root:===> parse_loop_partition_tag(loop=<ir.Loop object at 0x7f970b52c6a0>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(151)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52a9b0>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(151): depth(2) VECTOR_REMAINDER
+DEBUG:root:=> token: [1225] loop remark
+DEBUG:root:=> token: [1226] loop remark
+DEBUG:root:=> token [1227]: LOOP END
+DEBUG:root:=> token [1228]: LOOP END
+DEBUG:root:=> token [1229]: skip
+DEBUG:root:=> token [1230]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(165)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52c9e8>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(165)
+DEBUG:root:=> token: [1231] loop remark
+DEBUG:root:=> token: [1232] loop remark
+DEBUG:root:=> token: [1233] loop remark
+DEBUG:root:=> token [1234]: skip
+DEBUG:root:=> token [1235]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(166)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52cb70>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(166)
+DEBUG:root:=> token: [1236] loop remark
+DEBUG:root:=> token: [1237] loop remark
+DEBUG:root:=> token: [1238] loop remark
+DEBUG:root:=> token [1239]: skip
+DEBUG:root:=> token [1240]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(167)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52ccf8>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(167)
+DEBUG:root:=> token: [1241] loop remark
+DEBUG:root:=> token: [1242] loop remark
+DEBUG:root:=> token: [1243] loop remark
+DEBUG:root:=> token: [1244] loop remark
+DEBUG:root:=> token: [1245] loop remark
+DEBUG:root:=> token: [1246] loop remark
+DEBUG:root:=> token: [1247] loop remark
+DEBUG:root:=> token: [1248] loop remark
+DEBUG:root:=> token: [1249] loop remark
+DEBUG:root:=> token: [1250] loop remark
+DEBUG:root:=> token: [1251] loop remark
+DEBUG:root:=> token: [1252] loop remark
+DEBUG:root:=> token: [1253] loop remark
+DEBUG:root:=> token: [1254] loop remark
+DEBUG:root:=> token: [1255] loop remark
+DEBUG:root:=> token: [1256] loop remark
+DEBUG:root:=> token: [1257] loop remark
+DEBUG:root:=> token: [1258] loop remark
+DEBUG:root:=> token: [1259] loop remark
+DEBUG:root:=> token: [1260] loop remark
+DEBUG:root:=> token [1261]: LOOP END
+DEBUG:root:=> token [1262]: skip
+DEBUG:root:=> token [1263]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(167)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52ccf8>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(167)
+DEBUG:root:=> token [1264]: loop partition tag
+DEBUG:root:===> parse_loop_partition_tag(loop=<ir.Loop object at 0x7f970b52ccf8>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(167)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b53b080>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(167): depth(3) VECTOR_REMAINDER
+DEBUG:root:=> token: [1265] loop remark
+DEBUG:root:=> token [1266]: LOOP END
+DEBUG:root:=> token [1267]: LOOP END
+DEBUG:root:=> token [1268]: LOOP END
+DEBUG:root:=> token [1269]: skip
+DEBUG:root:=> token [1270]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(176)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52cc88>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(176)
+DEBUG:root:=> token: [1271] loop remark
+DEBUG:root:=> token: [1272] loop remark
+DEBUG:root:=> token: [1273] loop remark
+DEBUG:root:=> token [1274]: skip
+DEBUG:root:=> token [1275]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(178)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52ce80>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(178)
+DEBUG:root:=> token: [1276] loop remark
+DEBUG:root:=> token: [1277] loop remark
+DEBUG:root:=> token: [1278] loop remark
+DEBUG:root:=> token: [1279] loop remark
+DEBUG:root:=> token: [1280] loop remark
+DEBUG:root:=> token: [1281] loop remark
+DEBUG:root:=> token: [1282] loop remark
+DEBUG:root:=> token: [1283] loop remark
+DEBUG:root:=> token: [1284] loop remark
+DEBUG:root:=> token: [1285] loop remark
+DEBUG:root:=> token: [1286] loop remark
+DEBUG:root:=> token: [1287] loop remark
+DEBUG:root:=> token: [1288] loop remark
+DEBUG:root:=> token: [1289] loop remark
+DEBUG:root:=> token: [1290] loop remark
+DEBUG:root:=> token: [1291] loop remark
+DEBUG:root:=> token: [1292] loop remark
+DEBUG:root:=> token: [1293] loop remark
+DEBUG:root:=> token: [1294] loop remark
+DEBUG:root:=> token: [1295] loop remark
+DEBUG:root:=> token: [1296] loop remark
+DEBUG:root:=> token: [1297] loop remark
+DEBUG:root:=> token: [1298] loop remark
+DEBUG:root:=> token: [1299] loop remark
+DEBUG:root:=> token: [1300] loop remark
+DEBUG:root:=> token [1301]: LOOP END
+DEBUG:root:=> token [1302]: skip
+DEBUG:root:=> token [1303]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(178)
+DEBUG:root:===> parse_loop_report(loop=<ir.Loop object at 0x7f970b52ce80>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(178)
+DEBUG:root:=> token [1304]: loop partition tag
+DEBUG:root:===> parse_loop_partition_tag(loop=<ir.Loop object at 0x7f970b52ce80>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(178)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52ab70>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(178): depth(2) VECTOR_REMAINDER
+DEBUG:root:=> token: [1305] loop remark
+DEBUG:root:=> token: [1306] loop remark
+DEBUG:root:=> token [1307]: LOOP END
+DEBUG:root:=> token [1308]: LOOP END
+DEBUG:root:=> token [1309]: LOOP END
+DEBUG:root:=> token [1310]: skip
+DEBUG:root:=> token [1311]: LOOP BEGIN at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(203)
+DEBUG:root:=> new Loop() obj at <ir.Loop object at 0x7f970b52acc0>
+DEBUG:root:/home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(203): depth(0) MAIN
+DEBUG:root:=> added a new top level loop Loop(<ir.Loop object at 0x7f970b52acc0>)
+DEBUG:root:loop at /home/s1736883/Work/PParMetrics/benchmarks/snu-npb/nauseous-omp/BT/src/rhs.c(203)
