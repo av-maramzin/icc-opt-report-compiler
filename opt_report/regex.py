@@ -3,8 +3,8 @@
 import re
 
 # [1] Regular expressions matching loop boundaries in the ICC compiler report
-LOOP_BEGIN_re = re.compile("LOOP BEGIN at (.+)\(([0-9]+),([0-9]+)\)$")
-LOOP_BEGIN_INLINED_re = re.compile("LOOP BEGIN at (.+)\(([0-9]+),([0-9]+)\) inlined into (.+)\(([0-9]+),([0-9]+)\)$")
+LOOP_BEGIN_re = re.compile("LOOP BEGIN at (.+)\(([0-9]+),([0-9]+)\)")
+LOOP_BEGIN_INLINED_re = re.compile("LOOP BEGIN at (.+)\(([0-9]+),([0-9]+)\) inlined into (.+)\(([0-9]+),([0-9]+)\)")
 LOOP_END_re = re.compile("LOOP END$")
 LOOP_NAME_re = re.compile("(.+)\(([0-9]+)\)")
 

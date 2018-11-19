@@ -220,15 +220,6 @@ class Tokeniser:
 
         # [1] Check if the current lexeme signifies beginning of a loop report
 
-        # loop begin
-        re_match = LOOP_BEGIN_re.search(lexeme)
-        if re_match != None:
-            token = Token(TokenClass.LOOP_BEGIN, lexeme)
-            token.filename = re_match.group(1)
-            token.line = re_match.group(2)
-            token.inlined = False
-            return token
-
         # loop begin inlined into
         re_match = LOOP_BEGIN_INLINED_re.search(lexeme)
         if re_match != None:
@@ -238,6 +229,15 @@ class Tokeniser:
             token.inlined = True
             token.inlined_filename = re_match.group(4)
             token.inlined_line = re_match.group(5)
+            return token
+
+        # loop begin
+        re_match = LOOP_BEGIN_re.search(lexeme)
+        if re_match != None:
+            token = Token(TokenClass.LOOP_BEGIN, lexeme)
+            token.filename = re_match.group(1)
+            token.line = re_match.group(2)
+            token.inlined = False
             return token
 
         # [2] Check if a current lexeme tags a loop as a loop partition

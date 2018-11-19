@@ -48,14 +48,15 @@ class LoopClassificationInfo:
         self.openmp = Classification.UNINITIALIZED
        
         # loop collapsing
-        self.tiled = 0
+        self.tiling = 0
+        self.tiling_count = 0
 
         # loop fusion
         self.fused = Classification.UNINITIALIZED
         self.fused_with = []
         self.fused_lost = Classification.UNINITIALIZED
         # loop fission (distribution)
-        self.distributed = Classification.UNINITIALIZED
+        self.distr = Classification.UNINITIALIZED
         self.distr_parts_n = 0
         # loop collapsing
         self.collapsed = Classification.UNINITIALIZED
@@ -112,8 +113,8 @@ class Loop:
         # all loop optimization information gathered from ICC report
         self.classification = LoopClassificationInfo(self)
         
-        logging.debug('=> new Loop() obj at ' + str(self))
-        logging.debug(self.filename + '(' + str(self.line) + '): ' + 'depth(' + str(self.depth) + ') ' + self.loop_type.name)
+        logging.debug('Loop: => new Loop() obj at ' + str(self))
+        logging.debug('Loop: ' + self.filename + '(' + str(self.line) + '): ' + 'depth(' + str(self.depth) + ') ' + self.loop_type.name)
 
     def get_loop_nest_struct(self):
         return self.loop_nest_struct
@@ -144,9 +145,9 @@ class Loop:
             inner_loop.set_parent_loop(self)
             self.inner_loops[inner_loop.name] = inner_loop
         
-            logging.debug('=> Loop(' + str(self) + ') added a new inner loop Loop(' + str(inner_loop) + ')')
-            logging.debug('loop at ' + self.filename + '(' + str(self.line) + ')')
-            logging.debug('inner loop at ' + inner_loop.filename + '(' + str(inner_loop.line) + ')')
+            logging.debug('Loop: => Loop(' + str(self) + ') added a new inner loop Loop(' + str(inner_loop) + ')')
+            logging.debug('Loop: loop at ' + self.filename + '(' + str(self.line) + ')')
+            logging.debug('Loop: inner loop at ' + inner_loop.filename + '(' + str(inner_loop.line) + ')')
 
             return True
         else:
@@ -163,9 +164,9 @@ class Loop:
             distr_chunk.set_main_loop(self)
             self.distr_chunks[num] = distr_chunk
 
-            logging.debug('=> Loop(' + str(self) + ') added a new distributed chunk Loop(' + str(distr_chunk) + ')')
-            logging.debug('loop at ' + self.filename + '(' + str(self.line) + ')')
-            logging.debug('distr loop at ' + distr_chunk.filename + '(' + str(distr_chunk.line) + ')')
+            logging.debug('Loop: => Loop(' + str(self) + ') added a new distributed chunk Loop(' + str(distr_chunk) + ')')
+            logging.debug('Loop: loop at ' + self.filename + '(' + str(self.line) + ')')
+            logging.debug('Loop: distr loop at ' + distr_chunk.filename + '(' + str(distr_chunk.line) + ')')
 
             return True
         else:
@@ -179,9 +180,9 @@ class Loop:
             peel_loop.set_main_loop(self)
             self.peel = peel_loop
 
-            logging.debug('=> Loop(' + str(self) + '): added peel loop Loop(' + str(peel_loop) + ')')
-            logging.debug('loop at ' + self.filename + '(' + str(self.line) + ')')
-            logging.debug('peel loop at ' + peel_loop.filename + '(' + str(peel_loop.line) + ')')
+            logging.debug('Loop: => Loop(' + str(self) + '): added peel loop Loop(' + str(peel_loop) + ')')
+            logging.debug('Loop: loop at ' + self.filename + '(' + str(self.line) + ')')
+            logging.debug('Loop: peel loop at ' + peel_loop.filename + '(' + str(peel_loop.line) + ')')
 
             return True
         else:
@@ -195,9 +196,9 @@ class Loop:
             remainder_loop.set_main_loop(self)
             self.remainder = remainder_loop
 
-            logging.debug('=> Loop(' + str(self) + '): added remainder loop Loop(' + str(remainder_loop) + ')')
-            logging.debug('loop at ' + self.filename + '(' + str(self.line) + ')')
-            logging.debug('remainder loop at ' + remainder_loop.filename + '(' + str(remainder_loop.line) + ')')
+            logging.debug('Loop: => Loop(' + str(self) + '): added remainder loop Loop(' + str(remainder_loop) + ')')
+            logging.debug('Loop: loop at ' + self.filename + '(' + str(self.line) + ')')
+            logging.debug('Loop: remainder loop at ' + remainder_loop.filename + '(' + str(remainder_loop.line) + ')')
 
             return True
         else:
@@ -211,9 +212,9 @@ class Loop:
             remainder_loop.set_main_loop(self)
             self.vector_remainder = remainder_loop
 
-            logging.debug('=> Loop(' + str(self) + '): added vector remainder loop Loop(' + str(remainder_loop) + ')')
-            logging.debug('loop at ' + self.filename + '(' + str(self.line) + ')')
-            logging.debug('vector remainder loop at ' + remainder_loop.filename + '(' + str(remainder_loop.line) + ')')
+            logging.debug('Loop: => Loop(' + str(self) + '): added vector remainder loop Loop(' + str(remainder_loop) + ')')
+            logging.debug('Loop: loop at ' + self.filename + '(' + str(self.line) + ')')
+            logging.debug('Loop: vector remainder loop at ' + remainder_loop.filename + '(' + str(remainder_loop.line) + ')')
 
             return True
         else:
@@ -254,8 +255,8 @@ class LoopNestingStructure:
         if loop.name not in self.top_level_loops:
             self.top_level_loops[loop.name] = loop
 
-            logging.debug('=> added a new top level loop Loop(' + str(loop) + ')')
-            logging.debug('loop at ' + loop.filename + '(' + str(loop.line) + ')')
+            logging.debug('LoopNestStruct: => added a new top level loop Loop(' + str(loop) + ')')
+            logging.debug('LoopNestStruct: loop at ' + loop.filename + '(' + str(loop.line) + ')')
 
             return True
         else:
@@ -271,8 +272,8 @@ class LoopNestingStructure:
         if loop.name not in self.loops:
             self.loops[loop.name] = loop
 
-            logging.debug('=> LoopNestStructure(' + str(self) + ') added a new loop Loop(' + str(loop) + ')')
-            logging.debug('loop at ' + loop.filename + '(' + str(loop.line) + ')')
+            logging.debug('LoopNestStruct: => LoopNestStructure(' + str(self) + ') added a new loop Loop(' + str(loop) + ')')
+            logging.debug('LoopNestStruct: loop at ' + loop.filename + '(' + str(loop.line) + ')')
 
             return True
         else:
