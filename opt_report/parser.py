@@ -126,10 +126,10 @@ class Parser:
                     # get inner Loop object to fill with the information parsed out of incoming loop report
                     loop_name = Loop.form_main_loop_name(token.filename, token.line)
 
-                    if loop.filename == token.filename and loop.line == token.line:
-                        loop.classification.tiling_count += 1 
-                        # loop tiling optimization
-                        continue
+#                    if loop.filename == token.filename and loop.line == token.line:
+#                        loop.classification.tiling_count += 1 
+#                        # loop tiling optimization
+#                        continue
 
                     inner_loop = self.loop_nest_struct.get_loop(loop_name)
                     if inner_loop == None:
@@ -157,17 +157,17 @@ class Parser:
             elif token.token_class == TokenClass.LOOP_END:
                 logging.debug('Parser: => token ' + token_num + ': LOOP END')
 
-                if loop.classification.tiling_count != 0:
-                    loop.classification.tiling = loop.classification.tiling_count
+#                if loop.classification.tiling_count != 0:
+#                    loop.classification.tiling = loop.classification.tiling_count
 
-                while loop.classification.tiling_count > 0:
-                    token = self.lexer.get_next_token()
-                    token_num = '[' + str(self.lexer.get_token_num()) + ']'
-                    if token.token_class == TokenClass.LOOP_END:
-                        logging.debug('Parser: => token ' + token_num + ': LOOP END')
-                    else:
-                        sys.exit("error: parser: loop tiling LOOP END processing")
-                    loop.classification.tiling_count -= 1
+#                while loop.classification.tiling_count > 0:
+#                    token = self.lexer.get_next_token()
+#                    token_num = '[' + str(self.lexer.get_token_num()) + ']'
+#                    if token.token_class == TokenClass.LOOP_END:
+#                        logging.debug('Parser: => token ' + token_num + ': LOOP END')
+#                    else:
+#                        sys.exit("error: parser: loop tiling LOOP END processing")
+#                    loop.classification.tiling_count -= 1
                 # loop is done with
                 break
             elif token.token_class == TokenClass.LOOP_PART_TAG:
