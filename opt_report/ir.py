@@ -46,11 +46,11 @@ class LoopClassificationInfo:
 
         # #pragma omp presence
         self.openmp = Classification.UNINITIALIZED
-       
-        # loop collapsing
-        self.tiling = 0
-        self.tiling_count = 0
-
+        
+        # no loop optimizations reported
+        self.no_opts = Classification.UNINITIALIZED
+        # loop tiling
+        self.tiled = Classification.UNINITIALIZED
         # loop fusion
         self.fused = Classification.UNINITIALIZED
         self.fused_with = []
@@ -61,7 +61,7 @@ class LoopClassificationInfo:
         # loop collapsing
         self.collapsed = Classification.UNINITIALIZED
         self.collapsed_with = []
-        self.collapsed_eliminated = Classification.UNINITIALIZED
+        self.collapse_eliminated = Classification.UNINITIALIZED
 
     def set_parallel(self, classification):
         if self.parallel == Classification.UNINITIALIZED:
@@ -129,7 +129,9 @@ class Loop:
         self.depth = depth
         self.loop_type = loop_type
         self.number = number
+        self.name = filename + "(" + line + ")"
 
+        """
         if self.loop_type.value == LoopType.MAIN.value:
             self.name = filename + "(" + line + ")"
         elif self.loop_type.value == LoopType.FUSED.value:
@@ -144,7 +146,7 @@ class Loop:
             self.name = filename + "(" + line + ")%"
         elif self.loop_type.value == LoopType.UNKNOWN.value:
             sys.exit("A type of the loop " + filename + "(" + str(line) + ")" + "has not been specified")
-        
+        """
         # loop's composition
         self.inner_loops = {}
         self.distr_chunks = {}

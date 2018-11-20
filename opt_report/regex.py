@@ -19,6 +19,11 @@ LOOP_DISTR_CHUNK_REMAINDER_re = re.compile("<Remainder, Distributed chunk([0-9]+
 # [3] Regular expressions matching different sorts of loop remarks, provided by the Intel compiler in it's report
 LOOP_REMARK_re = re.compile("remark #([0-9]+): (.+)$")
 
+LOOP_MAIN_re = re.compile("LOOP")
+LOOP_DISTR_re = re.compile("DISTRIBUTED LOOP")
+LOOP_FUSED_re = re.compile("FUSED LOOP")
+LOOP_PARTIAL_re = re.compile("PARTIAL LOOP")
+
 # [3.1] remarks identifying loop parallelizability status 
 LOOP_PARALLEL_re = re.compile("LOOP WAS AUTO-PARALLELIZED")
 LOOP_PARALLEL_POTENTIAL_re = re.compile("loop was not parallelized: inner loop")
@@ -27,11 +32,6 @@ LOOP_PARALLEL_POTENTIAL_re = re.compile("loop was not parallelized: inner loop")
 LOOP_VECTOR_re = re.compile("LOOP WAS VECTORIZED")
 LOOP_VECTOR_POTENTIAL_re = re.compile("loop was not vectorized: inner loop was already vectorized")
 
-LOOP_MAIN_re = re.compile("LOOP")
-LOOP_DISTR_re = re.compile("DISTRIBUTED LOOP")
-LOOP_FUSED_re = re.compile("FUSED LOOP")
-LOOP_PARTIAL_re = re.compile("PARTIAL LOOP")
-
 # [3.3] remarks identifying dependencies present in loops 
 LOOP_PARALLEL_DEPENCENCE_re = re.compile("loop was not parallelized: existence of parallel dependence")
 LOOP_VECTOR_DEPENDENCE_re = re.compile("loop was not vectorized: vector dependence prevents vectorization")
@@ -39,15 +39,14 @@ LOOP_VECTOR_DEPENDENCE_re = re.compile("loop was not vectorized: vector dependen
 # [3.4] Remarks identifying different sorts of applied loop transformations/optimizations
 
 LOOP_NO_OPTIMIZATIONS_re = re.compile("No loop optimizations reported")
+
 LOOP_FUSION_MAIN_re = re.compile("Fused Loops: \((.*)\)$")
 LOOP_FUSION_LOST_re = re.compile("Loop lost in Fusion")
+
 LOOP_DISTRIBUTION_MARK_re = re.compile("Loop Distributed \(([0-9]+) way\)")
 
-# [2.5.1] (loop-fusion)
-FUSED_LOOPS_RE = re.compile("Fused loops: \((.*)\)")
-
-# [2.5.2] (loop-distribution)
-DISTRIBUTED_LOOP_RE = re.compile(": Loop Distributed \(([0-9]+) way\)")
+LOOP_COLLAPSE_MAIN_re = re.compile("Collapsed with loop at line ([0-9]+)")
+LOOP_COLLAPSE_ELIMINATED_re = re.compile("Loop eliminated in Collapsing")
 
 # [2.1] ICC compiler OpenMP report
 OPENMP_CONSTRUCT_RE = re.compile("OpenMP Construct at (.*)\((.*),.+")

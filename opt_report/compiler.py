@@ -3,9 +3,9 @@
 import sys
 import logging
 
-from lexer import Lexer
-from parser import Parser
-from ir import *
+from icc.opt_report.lexer import Lexer
+from icc.opt_report.parser import Parser
+from icc.opt_report.ir import *
 
 class IccOptReportCompiler:
 

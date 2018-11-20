@@ -3,11 +3,11 @@
 import sys
 from enum import Enum
 
-from scanner import Scanner
+from icc.opt_report.scanner import Scanner
 
-from regex import *
+from icc.opt_report.regex import *
 
-from ir import LoopType
+from icc.opt_report.ir import LoopType
 
 class TokenClass(Enum):
     
@@ -45,7 +45,10 @@ class LoopRemarkType(Enum):
     VECTOR_DEPENDENCE = 6
     LOOP_FUSION_MAIN = 7
     LOOP_FUSION_LOST = 8
-    LOOP_DISTRIBUTION_MARK = 9
+    LOOP_COLLAPSE_MAIN = 9
+    LOOP_COLLAPSE_ELIMINATED = 10
+    LOOP_DISTRIBUTION_MARK = 11
+    LOOP_NO_OPTIMIZATIONS = 12
 
 class Token:
 
@@ -208,11 +211,29 @@ class Tokeniser:
                 token.remark_type = LoopRemarkType.LOOP_FUSION_LOST
                 return token
 
+            # loop collapse optimization
+            re_match = LOOP_COLLAPSE_MAIN_re.search(token.remark)
+            if re_match != None:
+                token.remark_type = LoopRemarkType.LOOP_COLLAPSE_MAIN
+                token.collapsed_with = int(re_match.group(1))
+                return token
+
+            re_match = LOOP_COLLAPSE_ELIMINATED_re.search(token.remark)
+            if re_match != None:
+                token.remark_type = LoopRemarkType.LOOP_COLLAPSE_ELIMINATED
+                return token
+
             # loop distribution optimization
             re_match = LOOP_DISTRIBUTION_MARK_re.search(token.remark)
             if re_match != None:
                 token.remark_type = LoopRemarkType.LOOP_DISTRIBUTION_MARK
                 token.distr_num = re_match.group(1)
+                return token
+
+            # loop distribution optimization
+            re_match = LOOP_NO_OPTIMIZATIONS_re.search(token.remark)
+            if re_match != None:
+                token.remark_type = LoopRemarkType.LOOP_NO_OPTIMIZATIONS
                 return token
 
             # remark we are not currently interested in

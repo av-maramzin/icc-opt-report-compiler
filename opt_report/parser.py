@@ -5,9 +5,9 @@ import sys
 import logging
 from enum import Enum
 
-from ir import *
-from lexer import Lexer
-from tokeniser import *
+from icc.opt_report.ir import *
+from icc.opt_report.lexer import Lexer
+from icc.opt_report.tokeniser import *
 
 class Parser:
 
@@ -73,12 +73,11 @@ class Parser:
                         loop_depth = 0
                         
                         loop = Loop(token.filename, token.line, loop_depth, loop_type, num)
-                         
-                        if self.loop_nest_struct.add_top_level_loop(loop) == False:
-                            sys.exit("error: ir: could not add Loop obj " + str(loop) + " " + token.filename + "(" + str(token.line) + ")" + " to LoopNestingStructure IR.top_level_loops")
+                        loop.set_loop_nest_struct(self.loop_nest_struct)
                         if self.loop_nest_struct.add_loop(loop) == False:
                             sys.exit("error: ir: could not add Loop obj " + str(loop) + " " + token.filename + "(" + str(token.line) + ")" + " to LoopNestingStructure IR.loops")
-                        loop.set_loop_nest_struct(self.loop_nest_struct)
+                        if self.loop_nest_struct.add_top_level_loop(loop) == False:
+                            sys.exit("error: ir: could not add Loop obj " + str(loop) + " " + token.filename + "(" + str(token.line) + ")" + " to LoopNestingStructure IR.top_level_loops")
                     elif self.loop_nest_struct.get_top_level_loop(loop_name) == None:
                         if self.loop_nest_struct.add_top_level_loop(loop) == False:
                             sys.exit("error: ir: could not add Loop obj " + str(loop) + " " + token.filename + "(" + str(token.line) + ")" + " to LoopNestingStructure IR.top_level_loops")
@@ -126,10 +125,8 @@ class Parser:
                     # get inner Loop object to fill with the information parsed out of incoming loop report
                     loop_name = Loop.form_main_loop_name(token.filename, token.line)
 
-#                    if loop.filename == token.filename and loop.line == token.line:
-#                        loop.classification.tiling_count += 1 
-#                        # loop tiling optimization
-#                        continue
+                    if loop.filename == token.filename and loop.line == token.line:
+                        loop.classification.tiled = Classification.YES
 
                     inner_loop = self.loop_nest_struct.get_loop(loop_name)
                     if inner_loop == None:
@@ -140,13 +137,15 @@ class Parser:
                         loop_depth = loop.depth + 1
                         
                         inner_loop = Loop(token.filename, token.line, loop_depth, loop_type, num)
-                        
-                        if loop.add_inner_loop(inner_loop) == False:
-                            sys.exit("error: ir: could not add Loop obj " + str(inner_loop) + " " + token.filename + "(" + str(token.line) + ")" + " to Loop.inner_loops")
-                        if loop_type == LoopType.MAIN:
+                        inner_loop.set_loop_nest_struct(self.loop_nest_struct)
+ 
+                        if loop_type == LoopType.MAIN or loop_type == LoopType.DISTR:
                             if self.loop_nest_struct.add_loop(inner_loop) == False:
                                 sys.exit("error: ir: could not add Loop obj " + str(inner_loop) + " " + token.filename + "(" + str(token.line) + ")" + " to LoopNestingStructure IR.loops")
-                        inner_loop.set_loop_nest_struct(self.loop_nest_struct)
+                       
+                        if loop.add_inner_loop(inner_loop) == False:
+                            sys.exit("error: ir: could not add Loop obj " + str(inner_loop) + " " + token.filename + "(" + str(token.line) + ")" + " to Loop.inner_loops")
+                    
                     elif loop.get_inner_loop(loop_name) == None:
                         if loop.add_inner_loop(inner_loop) == False:
                             sys.exit("error: ir: could not add Loop obj " + str(inner_loop) + " " + token.filename + "(" + str(token.line) + ")" + " to Loop.inner_loops")
@@ -156,18 +155,6 @@ class Parser:
                 continue
             elif token.token_class == TokenClass.LOOP_END:
                 logging.debug('Parser: => token ' + token_num + ': LOOP END')
-
-#                if loop.classification.tiling_count != 0:
-#                    loop.classification.tiling = loop.classification.tiling_count
-
-#                while loop.classification.tiling_count > 0:
-#                    token = self.lexer.get_next_token()
-#                    token_num = '[' + str(self.lexer.get_token_num()) + ']'
-#                    if token.token_class == TokenClass.LOOP_END:
-#                        logging.debug('Parser: => token ' + token_num + ': LOOP END')
-#                    else:
-#                        sys.exit("error: parser: loop tiling LOOP END processing")
-#                    loop.classification.tiling_count -= 1
                 # loop is done with
                 break
             elif token.token_class == TokenClass.LOOP_PART_TAG:
@@ -224,9 +211,11 @@ class Parser:
                     loop_type = LoopType.DISTR
                     distr_chunk_loop = Loop(loop.filename, loop.line, loop.depth, loop_type, num)
                     loop.add_distr_chunk(distr_chunk_loop, num)
-            loop_type = LoopType.VECTOR_REMAINDER
-            distr_chunk_remainder_loop = Loop(loop.filename, loop.line, loop.depth, loop_type, num)
-            distr_chunk_loop.add_vector_remainder_loop(distr_chunk_remainder_loop)
+            distr_chunk_remainder_loop = distr_chunk_loop.get_vector_remainder_loop()
+            if distr_chunk_remainder_loop == None:
+                loop_type = LoopType.VECTOR_REMAINDER
+                distr_chunk_remainder_loop = Loop(loop.filename, loop.line, loop.depth, loop_type, num)
+                distr_chunk_loop.add_vector_remainder_loop(distr_chunk_remainder_loop)
             return distr_chunk_remainder_loop 
  
         # loop distributed chunk remainder
@@ -242,9 +231,11 @@ class Parser:
                     loop_type = LoopType.DISTR
                     distr_chunk_loop = Loop(loop.filename, loop.line, loop.depth, loop_type, num)
                     loop.add_distr_chunk(distr_chunk_loop, num)
-            loop_type = LoopType.REMAINDER
-            distr_chunk_remainder_loop = Loop(loop.filename, loop.line, loop.depth, loop_type, num)
-            distr_chunk_loop.add_remainder_loop(distr_chunk_remainder_loop)
+            distr_chunk_remainder_loop = distr_chunk_loop.get_remainder_loop()
+            if distr_chunk_remainder_loop == None:
+                loop_type = LoopType.REMAINDER
+                distr_chunk_remainder_loop = Loop(loop.filename, loop.line, loop.depth, loop_type, num)
+                distr_chunk_loop.add_remainder_loop(distr_chunk_remainder_loop)
             return distr_chunk_remainder_loop 
        
         # loop peel
@@ -299,12 +290,21 @@ class Parser:
             loop.classification.set_parallel_dependence(Classification.YES)
         elif token.remark_type == LoopRemarkType.VECTOR_DEPENDENCE:
             loop.classification.set_vector_dependence(Classification.YES)
+        # no loop optimizations
+        elif token.remark_type == LoopRemarkType.LOOP_NO_OPTIMIZATIONS:
+            loop.classification.no_opts = Classification.YES
         # loop fusion
         elif token.remark_type == LoopRemarkType.LOOP_FUSION_MAIN:
             loop.classification.fused = Classification.YES
             loop.classification.fused_with = token.fused_list
         elif token.remark_type == LoopRemarkType.LOOP_FUSION_LOST:
             loop.classification.fused_lost = Classification.YES
+        # loop collapsing
+        elif token.remark_type == LoopRemarkType.LOOP_COLLAPSE_MAIN:
+            loop.classification.collapsed = Classification.YES
+            loop.classification.collapsed_with = token.collapsed_with
+        elif token.remark_type == LoopRemarkType.LOOP_COLLAPSE_ELIMINATED:
+            loop.classification.collapse_eliminated = Classification.YES
         # loop distribution
         elif token.remark_type == LoopRemarkType.LOOP_DISTRIBUTION_MARK:
             loop.classification.distr = Classification.YES
