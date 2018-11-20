@@ -175,7 +175,8 @@ class Parser:
                 old_loop = loop
                 loop = self.parse_loop_partition_tag(loop, token)
                 if loop is old_loop:
-                    sys.exit("error: parser: loop partition tag is supposed to create a new loop in a loop nesting structure")
+                    if token.tag_type != LoopPartTagType.DISTR_CHUNK or token.chunk_num != 1:
+                        sys.exit("error: parser: loop partition tag is supposed to create a new loop in a loop nesting structure")
                 continue
             else:
                 sys.exit("error: parser: unrecognised token has been encountered")
@@ -200,24 +201,52 @@ class Parser:
             num = token.chunk_num
             distr_chunk_loop = loop.get_distr_chunk(num)
             if distr_chunk_loop == None:
-                loop_type = LoopType.DISTR
-                distr_chunk_loop = Loop(loop.filename, loop.line, loop.depth, loop_type, num)
-                loop.add_distr_chunk(distr_chunk_loop, num)
+                if num == 1:
+                    # distributed chunk 1 is treated as the main loop
+                    distr_chunk_loop = loop
+                    loop.add_distr_chunk(distr_chunk_loop, num)
+                else:
+                    loop_type = LoopType.DISTR
+                    distr_chunk_loop = Loop(loop.filename, loop.line, loop.depth, loop_type, num)
+                    loop.add_distr_chunk(distr_chunk_loop, num)
             return distr_chunk_loop 
 
-        # loop distributed chunk remainder
+        # loop distributed chunk vector remainder
         if token.tag_type == LoopPartTagType.DISTR_CHUNK_VECTOR_REMAINDER:
             num = token.chunk_num
             distr_chunk_loop = loop.get_distr_chunk(num)
             if distr_chunk_loop == None:
-                loop_type = LoopType.DISTRIBUTED_CHUNK
-                distr_chunk_loop = Loop(loop.filename, loop.line, loop.depth, loop_type, num)
-                loop.add_distr_chunk(distr_chunk_loop, num)
+                if num == 1:
+                    # distributed chunk 1 is treated as the main loop
+                    distr_chunk_loop = loop
+                    loop.add_distr_chunk(distr_chunk_loop, num)
+                else:
+                    loop_type = LoopType.DISTR
+                    distr_chunk_loop = Loop(loop.filename, loop.line, loop.depth, loop_type, num)
+                    loop.add_distr_chunk(distr_chunk_loop, num)
             loop_type = LoopType.VECTOR_REMAINDER
             distr_chunk_remainder_loop = Loop(loop.filename, loop.line, loop.depth, loop_type, num)
-            distr_chunk_loop.add_remainder_loop(distr_chunk_loop, num)
-            return distr_chunk_loop 
-        
+            distr_chunk_loop.add_vector_remainder_loop(distr_chunk_remainder_loop)
+            return distr_chunk_remainder_loop 
+ 
+        # loop distributed chunk remainder
+        if token.tag_type == LoopPartTagType.DISTR_CHUNK_REMAINDER:
+            num = token.chunk_num
+            distr_chunk_loop = loop.get_distr_chunk(num)
+            if distr_chunk_loop == None:
+                if num == 1:
+                    # distributed chunk 1 is treated as the main loop
+                    distr_chunk_loop = loop
+                    loop.add_distr_chunk(distr_chunk_loop, num)
+                else:
+                    loop_type = LoopType.DISTR
+                    distr_chunk_loop = Loop(loop.filename, loop.line, loop.depth, loop_type, num)
+                    loop.add_distr_chunk(distr_chunk_loop, num)
+            loop_type = LoopType.REMAINDER
+            distr_chunk_remainder_loop = Loop(loop.filename, loop.line, loop.depth, loop_type, num)
+            distr_chunk_loop.add_remainder_loop(distr_chunk_remainder_loop)
+            return distr_chunk_remainder_loop 
+       
         # loop peel
         if token.tag_type == LoopPartTagType.PEEL:
             peel_loop = loop.get_peel_loop()
@@ -257,19 +286,19 @@ class Parser:
         
         # parallel  
         if token.remark_type == LoopRemarkType.PARALLEL:
-            loop.classification.parallel = Classification.YES
+            loop.classification.set_parallel(Classification.YES)
         elif token.remark_type == LoopRemarkType.PARALLEL_POTENTIAL:
-            loop.classification.parallel_potential = Classification.YES
+            loop.classification.set_parallel_potential(Classification.YES)
         # vector
         elif token.remark_type == LoopRemarkType.VECTOR:
-            loop.classification.vector = Classification.YES
+            loop.classification.set_vector(Classification.YES)
         elif token.remark_type == LoopRemarkType.VECTOR_POTENTIAL:
-            loop.classification.vector_potential = Classification.YES
+            loop.classification.set_vector_potential(Classification.YES)
         # dependence
         elif token.remark_type == LoopRemarkType.PARALLEL_DEPENDENCE:
-            loop.classification.parallel_dependence = Classification.YES
+            loop.classification.set_parallel_dependence(Classification.YES)
         elif token.remark_type == LoopRemarkType.VECTOR_DEPENDENCE:
-            loop.classification.vector_dependence = Classification.YES
+            loop.classification.set_vector_dependence(Classification.YES)
         # loop fusion
         elif token.remark_type == LoopRemarkType.LOOP_FUSION_MAIN:
             loop.classification.fused = Classification.YES

@@ -27,9 +27,10 @@ class LoopPartTagType(Enum):
     
     DISTR_CHUNK = 0
     DISTR_CHUNK_VECTOR_REMAINDER = 1
-    PEEL = 2
-    VECTOR_REMAINDER = 3
-    REMAINDER = 4
+    DISTR_CHUNK_REMAINDER = 2
+    PEEL = 3
+    VECTOR_REMAINDER = 4
+    REMAINDER = 5
 
 class LoopRemarkType(Enum):
     
@@ -247,15 +248,23 @@ class Tokeniser:
         if re_match != None:
             token = Token(TokenClass.LOOP_PART_TAG, lexeme)
             token.tag_type = LoopPartTagType.DISTR_CHUNK
-            token.chunk_num = re_match.group(1)
+            token.chunk_num = int(re_match.group(1))
             return token
         
-        # loop distributed chunk remainder
+        # loop distributed chunk vector remainder
         re_match = LOOP_DISTR_CHUNK_VECTOR_REMAINDER_re.search(lexeme)
         if re_match != None:
             token = Token(TokenClass.LOOP_PART_TAG, lexeme)
             token.tag_type = LoopPartTagType.DISTR_CHUNK_VECTOR_REMAINDER
-            token.chunk_num = re_match.group(1)
+            token.chunk_num = int(re_match.group(1))
+            return token
+
+        # loop distributed chunk remainder
+        re_match = LOOP_DISTR_CHUNK_REMAINDER_re.search(lexeme)
+        if re_match != None:
+            token = Token(TokenClass.LOOP_PART_TAG, lexeme)
+            token.tag_type = LoopPartTagType.DISTR_CHUNK_REMAINDER
+            token.chunk_num = int(re_match.group(1))
             return token
 
         # loop peel

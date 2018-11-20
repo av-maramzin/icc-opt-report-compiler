@@ -63,6 +63,48 @@ class LoopClassificationInfo:
         self.collapsed_with = []
         self.collapsed_eliminated = Classification.UNINITIALIZED
 
+    def set_parallel(self, classification):
+        if self.parallel == Classification.UNINITIALIZED:
+            self.parallel = classification
+        else:
+            if self.parallel != classification:
+                logging.debug('LoopClassification: => Loop(' + str(self.loop)  +') attempt to reset PARALLEL classification to the opposite')
+
+    def set_parallel_potential(self, classification):
+        if self.parallel_potential == Classification.UNINITIALIZED:
+            self.parallel_potential = classification
+        else:
+            if self.parallel_potential != classification:
+                logging.debug('LoopClassification: => Loop(' + str(self.loop)  +') attempt to reset PARALLEL POTENTIAL classification')
+
+    def set_vector(self, classification):
+        if self.vector == Classification.UNINITIALIZED:
+            self.vector = classification
+        else:
+            if self.vector != classification:
+                logging.debug('LoopClassification: => Loop(' + str(self.loop)  +') attempt to reset VECTOR classification')
+
+    def set_vector_potential(self, classification):
+        if self.vector_potential == Classification.UNINITIALIZED:
+            self.vector_potential = classification
+        else:
+            if self.vector_potential != classification:
+                logging.debug('LoopClassification: => Loop(' + str(self.loop)  +') attempt to reset VECTOR POTENTIAL classification')
+
+    def set_parallel_dependence(self, classification):
+        if self.parallel_dependence == Classification.UNINITIALIZED:
+            self.parallel_dependence = classification
+        else:
+            if self.parallel_dependence != classification:
+                logging.debug('LoopClassification: => Loop(' + str(self.loop)  +') attempt to reset PARALLEL DEPENDENCE classification')
+
+    def set_vector_dependence(self, classification):
+        if self.vector_dependence == Classification.UNINITIALIZED:
+            self.vector_dependence = classification
+        else:
+            if self.vector_dependence != classification:
+                logging.debug('LoopClassification: => Loop(' + str(self.loop)  +') attempt to reset VECTOR DEPENDENCE classification')
+
 class Loop:
 
     """ Loop, as found in the source code """
@@ -245,6 +287,9 @@ class LoopNestingStructure:
         # to a LoopNestingStructure class containing the loop
         self.loops = {}
  
+    def get_loops(self):
+        return self.loops
+
     def get_top_level_loop(self, loop_name):
         if loop_name in self.top_level_loops:
             return self.top_level_loops[loop_name]

@@ -14,6 +14,7 @@ LOOP_PEEL_re = re.compile("<Peeled loop for vectorization>")
 LOOP_VECTOR_REMAINDER_re = re.compile("<Remainder loop for vectorization>")
 LOOP_REMAINDER_re = re.compile("<Remainder>")
 LOOP_DISTR_CHUNK_VECTOR_REMAINDER_re = re.compile("<Remainder loop for vectorization, Distributed chunk([0-9]+)>")
+LOOP_DISTR_CHUNK_REMAINDER_re = re.compile("<Remainder, Distributed chunk([0-9]+)>")
 
 # [3] Regular expressions matching different sorts of loop remarks, provided by the Intel compiler in it's report
 LOOP_REMARK_re = re.compile("remark #([0-9]+): (.+)$")
