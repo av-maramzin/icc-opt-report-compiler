@@ -2,8 +2,8 @@
 
 import sys
 
-from icc.opt_report.scanner import Scanner
-from icc.opt_report.tokeniser import Tokeniser, Token, TokenClass
+from scanner import Scanner
+from tokeniser import Tokeniser, Token, TokenClass
 
 class Lexer:
 

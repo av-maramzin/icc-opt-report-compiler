@@ -63,6 +63,17 @@ class LoopClassificationInfo:
         self.collapsed_with = []
         self.collapse_eliminated = Classification.UNINITIALIZED
 
+    def copy(self, classification):
+        # loop's parallelisation status
+        self.parallel = classification.parallel
+        self.parallel_potential = classification.parallel_potential
+        # loop vectorization status
+        self.vector = classification.vector
+        self.vector_potential = classification.vector_potential
+        # loop dependence present
+        self.parallel_dependence = classification.parallel_dependence
+        self.vector_dependence = classification.vector_dependence
+
     def set_parallel(self, classification):
         if self.parallel == Classification.UNINITIALIZED:
             self.parallel = classification
@@ -283,14 +294,23 @@ class LoopNestingStructure:
         # entrance points into the loop nesting structure
         self.top_level_loops = {}
 
-        # convenience data-structure
         # dictionary of all original (not created by the ICC compiler) (top-level and nested) loops;
         # this list is also being populated indirectly out of Loop class objects, through a reference
         # to a LoopNestingStructure class containing the loop
         self.loops = {}
+
+        # convenience and auxiliary data-structures
+        self.fused_loops = {}
+        self.collapsed_loops = {}
  
     def get_loops(self):
         return self.loops
+
+    def get_fused_loops(self):
+        return self.fused_loops
+
+    def get_collapsed_loops(self):
+        return self.collapsed_loops
 
     def get_top_level_loop(self, loop_name):
         if loop_name in self.top_level_loops:
@@ -321,6 +341,28 @@ class LoopNestingStructure:
 
             logging.debug('LoopNestStruct: => LoopNestStructure(' + str(self) + ') added a new loop Loop(' + str(loop) + ')')
             logging.debug('LoopNestStruct: loop at ' + loop.filename + '(' + str(loop.line) + ')')
+
+            return True
+        else:
+            return False
+
+    def add_fused_loop(self, loop):
+        if loop.name not in self.fused_loops:
+            self.fused_loops[loop.name] = loop
+
+            logging.debug('LoopNestStruct: => LoopNestStructure(' + str(self) + ') added a new fused loop Loop(' + str(loop) + ')')
+            logging.debug('LoopNestStruct: fused loop at ' + loop.filename + '(' + str(loop.line) + ')')
+
+            return True
+        else:
+            return False
+
+    def add_loop(self, loop):
+        if loop.name not in self.collapsed_loops:
+            self.collapsed_loops[loop.name] = loop
+
+            logging.debug('LoopNestStruct: => LoopNestStructure(' + str(self) + ') added a new collapsed loop Loop(' + str(loop) + ')')
+            logging.debug('LoopNestStruct: collapsed loop at ' + loop.filename + '(' + str(loop.line) + ')')
 
             return True
         else:

@@ -5,9 +5,9 @@ import sys
 import logging
 from enum import Enum
 
-from icc.opt_report.ir import *
-from icc.opt_report.lexer import Lexer
-from icc.opt_report.tokeniser import *
+from ir import *
+from lexer import Lexer
+from tokeniser import *
 
 class Parser:
 
@@ -297,12 +297,14 @@ class Parser:
         elif token.remark_type == LoopRemarkType.LOOP_FUSION_MAIN:
             loop.classification.fused = Classification.YES
             loop.classification.fused_with = token.fused_list
+            self.loop_nest_struct.add_fused_loop(loop)
         elif token.remark_type == LoopRemarkType.LOOP_FUSION_LOST:
             loop.classification.fused_lost = Classification.YES
         # loop collapsing
         elif token.remark_type == LoopRemarkType.LOOP_COLLAPSE_MAIN:
             loop.classification.collapsed = Classification.YES
             loop.classification.collapsed_with = token.collapsed_with
+            self.loop_nest_struct.add_collapsed_loop(loop)
         elif token.remark_type == LoopRemarkType.LOOP_COLLAPSE_ELIMINATED:
             loop.classification.collapse_eliminated = Classification.YES
         # loop distribution
@@ -313,6 +315,4 @@ class Parser:
         return
 
 if __name__ == "__main__":
-    pass
-else:
     pass

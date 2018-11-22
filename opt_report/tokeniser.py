@@ -3,11 +3,11 @@
 import sys
 from enum import Enum
 
-from icc.opt_report.scanner import Scanner
+from scanner import Scanner
 
-from icc.opt_report.regex import *
+from regex import *
 
-from icc.opt_report.ir import LoopType
+from ir import LoopType
 
 class TokenClass(Enum):
     
