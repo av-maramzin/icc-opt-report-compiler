@@ -3,6 +3,9 @@
 import sys
 import logging
 
+import numpy as np
+import matplotlib.pyplot as plt
+
 from lexer import Lexer
 from parser import Parser
 from ir import *
@@ -29,53 +32,90 @@ class IccOptReportCompiler:
         fused_loops = self.ir.get_fused_loops()
         collapsed_loops = self.ir.get_collapsed_loops()
 
-        print("ICC optimization report " + self.report_filename + " has been successfully compiled!")
+        print("ICC optimization report " + self.report_filename + " has been successfully compiled!\n")
+
+        print("===== Overall statistics =====")
+        print("\n", end="")
+        
         print("loops total: " + str(len(src_loops)))
+        print("\n", end="")
+        
+        print("= Optimizations =")
+        print("\n", end="")
+
         print("loop fusions: " + str(len(fused_loops)))
-        print("loop collapsings: " + str(len(collapsed_loops)))
+        print("loop collapses: " + str(len(collapsed_loops)))
+
+        distr_loop_num = 0
+        parallel_loop_num = 0
+        vector_loop_num = 0
+        parallel_dep_num = 0
+        vector_dep_num = 0
+      
+        loop_depth_hist = {}
+
+        for loop_name, loop in src_loops.items():
+            
+            if loop.depth not in loop_depth_hist:
+                loop_depth_hist[loop.depth] = 1
+            else:
+                loop_depth_hist[loop.depth] += 1
+
+            if len(loop.distr_chunks) != 0:
+                distr_loop_num += 1
+            
+            if loop.classification.parallel == Classification.YES:
+                parallel_loop_num += 1
+ 
+            if loop.classification.vector == Classification.YES:
+                vector_loop_num += 1
+
+            if loop.classification.parallel_dependence == Classification.YES:
+                parallel_dep_num += 1
+
+            if loop.classification.vector_dependence == Classification.YES:
+                vector_dep_num += 1
+      
+        print("loop distributions: " + str(distr_loop_num))
+        print("\n", end="")
+
+        print("= Classifications =")
+        print("\n", end="")
+
+        print("parallel loops: " + str(parallel_loop_num))
+        print("vector loops: " + str(vector_loop_num))
+        print("parallel dependence: " + str(parallel_dep_num))
+        print("vector dependence: " + str(vector_dep_num))
+        print("\n", end="")
+
+        print("===== ================== =====")
+
+        width = 0.5
+        plt.bar(loop_depth_hist.keys(), loop_depth_hist.values(), width, color='g')
+        plt.show()
 
         num = 1
         for loop_name, loop in src_loops.items():
             
-            print("loop [" + str(num) + "]: " + loop_name)
+            print("loop [" + str(num) + "]: (depth: " + str(loop.depth) + ") " + loop_name)
             print("{")
-            print("\tdepth: " + str(loop.depth))
-            print("\n")
-             
             loop_class = loop.classification
-            
-            print("\tparallel: " + loop_class.parallel.name)
-            print("\tparallel potential: " + loop_class.parallel_potential.name)
-            print("\tvector: " + loop_class.vector.name)
-            print("\tvector potential: " + loop_class.vector_potential.name)
-            print("\tparallel dependence: " + loop_class.parallel_dependence.name)
-            print("\tvector dependence: " + loop_class.vector_dependence.name)
-            print("\tno optimizations: " + loop_class.no_opts.name)
-            print("\topenmp: " + loop_class.openmp.name)
-            print("\ttiled: " + loop_class.tiled.name)
-            print("\tfused: " + loop_class.fused.name)
-            print("\tfused with:" + ', '.join(str(line) for line in loop_class.fused_with))
-            print("\tlost in fusion: " + loop_class.fused_lost.name)
-            print("\tdistributed: " + loop_class.distr.name)
-            print("\tdistributed-num: " + str(loop_class.distr_parts_n))
-            print("\tcollapsed: " + loop_class.collapsed.name)
-            print("\tcollapsed with: " + str(loop_class.collapsed_with))
-            print("\tcollapse eliminated: " + loop_class.collapse_eliminated.name)
-            print("\n")
+            loop_class.print("\t") 
+            print("\n", end="")
 
             print("\tinner loops:")
             inner_num = 1
             for inner_loop_name, inner_loop in loop.inner_loops.items():
-                print("\t\tloop [" + str(inner_num) + "]: " + loop_name)
+                print("\t\t [" + str(inner_num) + "]: " + "(depth: " + str(loop.depth+1) + ") " + inner_loop_name)
                 inner_num += 1
-            print("\n")
+            print("\n", end="")
  
-            print("\tdistributed chunks:")
+            print("\tdistr chunks:")
             for distr_chunk_num, distr_chunk in loop.distr_chunks.items():
-                print("\t\tdistr chunk [" + str(distr_chunk_num) + "]: " + str(distr_chunk))
+                print("\t\t[" + str(distr_chunk_num) + "]: " + distr_chunk.name + "-" + str(distr_chunk_num))
 
             print("}")
-            print("\n")
+            print("\n", end="")
             num += 1
 
     def compile(self):

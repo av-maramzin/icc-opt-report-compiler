@@ -62,6 +62,72 @@ class LoopClassificationInfo:
         self.collapsed = Classification.UNINITIALIZED
         self.collapsed_with = []
         self.collapse_eliminated = Classification.UNINITIALIZED
+    
+    def print_raw(self, prefix):
+        print(prefix + "parallel: " + self.parallel.name)
+        print(prefix + "parallel potential: " + self.parallel_potential.name)
+        print(prefix + "vector: " + self.vector.name)
+        print(prefix + "vector potential: " + self.vector_potential.name)
+        print(prefix + "parallel dependence: " + self.parallel_dependence.name)
+        print(prefix + "vector dependence: " + self.vector_dependence.name)
+        print(prefix + "no optimizations: " + self.no_opts.name)
+        print(prefix + "openmp: " + self.openmp.name)
+        print(prefix + "tiled: " + self.tiled.name)
+        print(prefix + "fused: " + self.fused.name)
+        print(prefix + "fused with: " + ', '.join(str(line) for line in self.fused_with))
+        print(prefix + "lost in fusion: " + self.fused_lost.name)
+        print(prefix + "distributed: " + self.distr.name)
+        print(prefix + "distributed-num: " + str(self.distr_parts_n))
+        print(prefix + "collapsed: " + self.collapsed.name)
+        print(prefix + "collapsed with: " + str(self.collapsed_with))
+        print(prefix + "collapse eliminated: " + self.collapse_eliminated.name)
+
+    def print(self, prefix):
+        
+        if self.parallel != Classification.UNINITIALIZED:
+            print(prefix + "parallel: " + self.parallel.name)
+        
+        if self.parallel_potential != Classification.UNINITIALIZED:
+            print(prefix + "parallel potential: " + self.parallel_potential.name)
+        
+        if self.vector != Classification.UNINITIALIZED:
+            print(prefix + "vector: " + self.vector.name)
+        
+        if self.vector_potential != Classification.UNINITIALIZED:
+            print(prefix + "vector potential: " + self.vector_potential.name)
+        
+        if self.parallel_dependence != Classification.UNINITIALIZED:
+            print(prefix + "parallel dependence: " + self.parallel_dependence.name)
+
+        if self.vector_dependence != Classification.UNINITIALIZED:
+            print(prefix + "vector dependence: " + self.vector_dependence.name)
+
+        if self.no_opts != Classification.UNINITIALIZED:
+            print(prefix + "no optimizations: " + self.no_opts.name)
+        
+        if self.openmp != Classification.UNINITIALIZED:
+            print(prefix + "openmp: " + self.openmp.name)
+        
+        if self.tiled != Classification.UNINITIALIZED:
+            print(prefix + "tiled: " + self.tiled.name)
+        
+        if self.fused != Classification.UNINITIALIZED:
+            print(prefix + "fused: " + self.fused.name)
+            print(prefix + "fused with: " + ', '.join(str(line) for line in self.fused_with))
+        
+        if self.fused_lost != Classification.UNINITIALIZED:
+            print(prefix + "fusion lost: " + self.fused_lost.name)
+        
+        if self.distr != Classification.UNINITIALIZED:
+            print(prefix + "distr: " + self.distr.name)
+            print(prefix + "distr-num: " + str(self.distr_parts_n))
+        
+        if self.collapsed != Classification.UNINITIALIZED:
+            print(prefix + "collapsed: " + self.collapsed.name)
+            print(prefix + "collapsed with: " + str(self.collapsed_with))
+        
+        if self.collapse_eliminated != Classification.UNINITIALIZED:
+            print(prefix + "collapse eliminated: " + self.collapse_eliminated.name)
 
     def copy(self, classification):
         # loop's parallelisation status
