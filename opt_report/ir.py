@@ -357,7 +357,7 @@ class LoopNestingStructure:
         else:
             return False
 
-    def add_loop(self, loop):
+    def add_collapsed_loop(self, loop):
         if loop.name not in self.collapsed_loops:
             self.collapsed_loops[loop.name] = loop
 

@@ -17,7 +17,11 @@ class Parser:
     """
 
     def __init__(self, lexer):
+        
+        if lexer == None:
+            sys.exit("error: parser: has not been properly initialized with a non-None Lexer object")
         self.lexer = lexer
+
         self.loop_nest_struct = None
 
     def skip_loop(self):
@@ -34,13 +38,16 @@ class Parser:
         return  
 
     def parse_optimization_report(self, loop_nest_struct):
-        logging.debug('Parser: Parser: ===> parse_optimization_report()')
+        
+        logging.debug('Parser: parse_optimization_report()')
+        
         self.loop_nest_struct = loop_nest_struct
+        
         return self.parse_loop_report_list()
 
     def parse_loop_report_list(self):
         
-        logging.debug('Parser: ===> parse_loop_report_list()')
+        logging.debug('Parser: parse_loop_report_list()')
     
         while True:
 
@@ -85,6 +92,7 @@ class Parser:
                     # parse loop
                     self.parse_loop_report(loop)
             elif token.token_class == TokenClass.EOR:
+                logging.debug('Parser: => token ' + token_num + ': End Of Report (EOR)')
                 break
             else:
                 sys.exit("error: parser: got " + token.token_class.name + ", when SKIP or LOOP BEGIN tokens are expected")
@@ -98,8 +106,7 @@ class Parser:
         if loop == None:
             sys.exit("error: parser: parse_loop_report(): called with None Loop object")
        
-        logging.debug('Parser: ===> parse_loop_report(loop=' + str(loop) + ')')
-        logging.debug('Parser: Parser: loop at ' + loop.filename + '(' + str(loop.line) + ')')
+        logging.debug('Parser: => parse_loop_report( loop=' + str(loop) + ', ' + loop.filename + '(' + str(loop.line) + ') )')
         
         while True:
             
