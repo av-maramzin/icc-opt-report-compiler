@@ -34,6 +34,7 @@ LOOP_VECTOR_POTENTIAL_re = re.compile("loop was not vectorized: inner loop was a
 
 # [3.3] remarks identifying dependencies present in loops 
 LOOP_PARALLEL_DEPENCENCE_re = re.compile("loop was not parallelized: existence of parallel dependence")
+LOOP_PARALLEL_NOT_CANDIDATE_re = re.compile("loop was not parallelized: not a parallelization candidate")
 LOOP_VECTOR_DEPENDENCE_re = re.compile("loop was not vectorized: vector dependence prevents vectorization")
 
 # [3.4] Remarks identifying different sorts of applied loop transformations/optimizations

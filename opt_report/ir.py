@@ -42,6 +42,7 @@ class LoopClassificationInfo:
 
         # loop dependence present
         self.parallel_dependence = Classification.UNINITIALIZED
+        self.parallel_not_candidate = Classification.UNINITIALIZED
         self.vector_dependence = Classification.UNINITIALIZED
 
         # #pragma omp presence
@@ -69,6 +70,7 @@ class LoopClassificationInfo:
         print(prefix + "vector: " + self.vector.name)
         print(prefix + "vector potential: " + self.vector_potential.name)
         print(prefix + "parallel dependence: " + self.parallel_dependence.name)
+        print(prefix + "parallel not candidate: " + self.parallel_not_candidate.name)
         print(prefix + "vector dependence: " + self.vector_dependence.name)
         print(prefix + "no optimizations: " + self.no_opts.name)
         print(prefix + "openmp: " + self.openmp.name)
@@ -98,6 +100,9 @@ class LoopClassificationInfo:
         
         if self.parallel_dependence != Classification.UNINITIALIZED:
             print(prefix + "parallel dependence: " + self.parallel_dependence.name)
+
+        if self.parallel_not_candidate != Classification.UNINITIALIZED:
+            print(prefix + "parallel not candidate: " + self.parallel_not_candidate.name)
 
         if self.vector_dependence != Classification.UNINITIALIZED:
             print(prefix + "vector dependence: " + self.vector_dependence.name)
@@ -174,6 +179,13 @@ class LoopClassificationInfo:
         else:
             if self.parallel_dependence != classification:
                 logging.debug('LoopClassification: => Loop(' + str(self.loop)  +') attempt to reset PARALLEL DEPENDENCE classification')
+
+    def set_parallel_not_candidate(self, classification):
+        if self.parallel_not_candidate == Classification.UNINITIALIZED:
+            self.parallel_not_candidate = classification
+        else:
+            if self.parallel_not_candidate != classification:
+                logging.debug('LoopClassification: => Loop(' + str(self.loop)  +') attempt to reset PARALLEL NOT CANDIDATE classification')
 
     def set_vector_dependence(self, classification):
         if self.vector_dependence == Classification.UNINITIALIZED:

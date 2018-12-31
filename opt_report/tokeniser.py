@@ -42,13 +42,14 @@ class LoopRemarkType(Enum):
     VECTOR = 3
     VECTOR_POTENTIAL = 4
     PARALLEL_DEPENDENCE = 5
-    VECTOR_DEPENDENCE = 6
-    LOOP_FUSION_MAIN = 7
-    LOOP_FUSION_LOST = 8
-    LOOP_COLLAPSE_MAIN = 9
-    LOOP_COLLAPSE_ELIMINATED = 10
-    LOOP_DISTRIBUTION_MARK = 11
-    LOOP_NO_OPTIMIZATIONS = 12
+    PARALLEL_NOT_CANDIDATE = 6
+    VECTOR_DEPENDENCE = 7
+    LOOP_FUSION_MAIN = 8
+    LOOP_FUSION_LOST = 9
+    LOOP_COLLAPSE_MAIN = 10
+    LOOP_COLLAPSE_ELIMINATED = 11
+    LOOP_DISTRIBUTION_MARK = 12
+    LOOP_NO_OPTIMIZATIONS = 13
 
 class Token:
 
@@ -190,6 +191,12 @@ class Tokeniser:
             re_match = LOOP_PARALLEL_DEPENCENCE_re.search(token.remark)
             if re_match != None:
                 token.remark_type = LoopRemarkType.PARALLEL_DEPENDENCE
+                return token
+
+            # loop not a parallel candidate
+            re_match = LOOP_PARALLEL_NOT_CANDIDATE_re.search(token.remark)
+            if re_match != None:
+                token.remark_type = LoopRemarkType.PARALLEL_NOT_CANDIDATE
                 return token
 
             # loop vector dependence

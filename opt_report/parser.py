@@ -297,6 +297,9 @@ class Parser:
             loop.classification.set_parallel_dependence(Classification.YES)
         elif token.remark_type == LoopRemarkType.VECTOR_DEPENDENCE:
             loop.classification.set_vector_dependence(Classification.YES)
+        # not a parallel candidate
+        elif token.remark_type == LoopRemarkType.PARALLEL_NOT_CANDIDATE:
+            loop.classification.set_parallel_not_candidate(Classification.YES)
         # no loop optimizations
         elif token.remark_type == LoopRemarkType.LOOP_NO_OPTIMIZATIONS:
             loop.classification.no_opts = Classification.YES
