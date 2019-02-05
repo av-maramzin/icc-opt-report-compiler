@@ -1,7 +1,7 @@
 #! /usr/bin/python3
 
 import sys
-from enum import Enum
+from enum import Enum, auto
 
 from scanner import Scanner
 
@@ -13,43 +13,46 @@ class TokenClass(Enum):
     
     """ Intel C/C++ Compiler (ICC) optimization report token class """
     
-    UNDEFINED = 0
-    SKIP = 1
-    LOOP_BEGIN = 2
-    LOOP_END = 3
-    LOOP_PART_TAG = 4
-    LOOP_REMARK = 5
-    EOR = 6 # end of report 
+    UNDEFINED = auto()
+    SKIP = auto()
+    LOOP_BEGIN = auto()
+    LOOP_END = auto()
+    LOOP_PART_TAG = auto()
+    LOOP_REMARK = auto()
+    EOR = auto() # end of report 
 
 class LoopPartTagType(Enum):
     
     """ Intel C/C++ Compiler (ICC) optimization report loop partition tag type """
     
-    DISTR_CHUNK = 0
-    DISTR_CHUNK_VECTOR_REMAINDER = 1
-    DISTR_CHUNK_REMAINDER = 2
-    PEEL = 3
-    VECTOR_REMAINDER = 4
-    REMAINDER = 5
+    DISTR_CHUNK = auto()
+    DISTR_CHUNK_VECTOR_REMAINDER = auto()
+    DISTR_CHUNK_REMAINDER = auto()
+    PEEL = auto()
+    VECTOR_REMAINDER = auto()
+    REMAINDER = auto()
 
 class LoopRemarkType(Enum):
     
     """ Intel C/C++ Compiler (ICC) optimization report loop remark type """
     
-    SKIP = 0
-    PARALLEL = 1
-    PARALLEL_POTENTIAL = 2
-    VECTOR = 3
-    VECTOR_POTENTIAL = 4
-    PARALLEL_DEPENDENCE = 5
-    PARALLEL_NOT_CANDIDATE = 6
-    VECTOR_DEPENDENCE = 7
-    LOOP_FUSION_MAIN = 8
-    LOOP_FUSION_LOST = 9
-    LOOP_COLLAPSE_MAIN = 10
-    LOOP_COLLAPSE_ELIMINATED = 11
-    LOOP_DISTRIBUTION_MARK = 12
-    LOOP_NO_OPTIMIZATIONS = 13
+    SKIP = auto()
+    PARALLEL = auto()
+    PARALLEL_POTENTIAL = auto()
+    PARALLEL_INSUFFICIENT_WORK = auto()
+    MEMSET_GENERATED = auto()
+    VECTOR = auto()
+    VECTOR_POTENTIAL = auto()
+    TRANSFORMED_MEMSET = auto()
+    PARALLEL_DEPENDENCE = auto()
+    PARALLEL_NOT_CANDIDATE = auto()
+    VECTOR_DEPENDENCE = auto()
+    LOOP_FUSION_MAIN = auto()
+    LOOP_FUSION_LOST = auto()
+    LOOP_COLLAPSE_MAIN = auto()
+    LOOP_COLLAPSE_ELIMINATED = auto()
+    LOOP_DISTRIBUTION_MARK = auto()
+    LOOP_NO_OPTIMIZATIONS = auto()
 
 class Token:
 
@@ -181,10 +184,28 @@ class Tokeniser:
                 token.remark_type = LoopRemarkType.PARALLEL_POTENTIAL
                 return token
 
+            # loop was not parallelized: insufficient computational work
+            re_match = LOOP_PARALLEL_INSUFFICIENT_WORK_re.search(token.remark)
+            if re_match != None:
+                token.remark_type = LoopRemarkType.PARALLEL_INSUFFICIENT_WORK
+                return token
+
             # loop was not vectorized: inner loop was already vectorized 
             re_match = LOOP_VECTOR_POTENTIAL_re.search(token.remark)
             if re_match != None:
                 token.remark_type = LoopRemarkType.VECTOR_POTENTIAL
+                return token
+
+            # loop was not vectorized: loop was transformed to memset or memcpy 
+            re_match = LOOP_TRANSFORMED_MEMSET_re.search(token.remark)
+            if re_match != None:
+                token.remark_type = LoopRemarkType.TRANSFORMED_MEMSET
+                return token
+
+            # memset generated 
+            re_match = LOOP_MEMSET_GENERATED_re.search(token.remark)
+            if re_match != None:
+                token.remark_type = LoopRemarkType.MEMSET_GENERATED
                 return token
 
             # loop parallel dependence

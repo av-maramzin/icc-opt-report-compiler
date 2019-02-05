@@ -3,7 +3,7 @@
 import re
 import sys
 import logging
-from enum import Enum
+from enum import Enum, auto
 
 from ir import *
 from lexer import Lexer
@@ -287,11 +287,18 @@ class Parser:
             loop.classification.set_parallel(Classification.YES)
         elif token.remark_type == LoopRemarkType.PARALLEL_POTENTIAL:
             loop.classification.set_parallel_potential(Classification.YES)
+        elif token.remark_type == LoopRemarkType.PARALLEL_INSUFFICIENT_WORK:
+            loop.classification.set_parallel_potential(Classification.YES)
         # vector
         elif token.remark_type == LoopRemarkType.VECTOR:
             loop.classification.set_vector(Classification.YES)
         elif token.remark_type == LoopRemarkType.VECTOR_POTENTIAL:
             loop.classification.set_vector_potential(Classification.YES)
+        # transformed to memset or memcpy
+        elif token.remark_type == LoopRemarkType.TRANSFORMED_MEMSET:
+            loop.classification.set_memset(Classification.YES)
+        elif token.remark_type == LoopRemarkType.MEMSET_GENERATED:
+            loop.classification.set_memset(Classification.YES)
         # dependence
         elif token.remark_type == LoopRemarkType.PARALLEL_DEPENDENCE:
             loop.classification.set_parallel_dependence(Classification.YES)

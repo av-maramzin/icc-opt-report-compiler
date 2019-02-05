@@ -27,17 +27,22 @@ LOOP_PARTIAL_re = re.compile("PARTIAL LOOP")
 # [3.1] remarks identifying loop parallelizability status 
 LOOP_PARALLEL_re = re.compile("LOOP WAS AUTO-PARALLELIZED")
 LOOP_PARALLEL_POTENTIAL_re = re.compile("loop was not parallelized: inner loop")
+LOOP_PARALLEL_INSUFFICIENT_WORK_re = re.compile("loop was not parallelized: insufficient computational work")
 
 # [3.2] remarks identifying vectorized loops 
 LOOP_VECTOR_re = re.compile("LOOP WAS VECTORIZED")
 LOOP_VECTOR_POTENTIAL_re = re.compile("loop was not vectorized: inner loop was already vectorized")
 
-# [3.3] remarks identifying dependencies present in loops 
+# [3.3] remarks identifying simplified/eliminated/etc parallel/vectorisible loops 
+LOOP_MEMSET_GENERATED_re = re.compile("memset generated")
+LOOP_TRANSFORMED_MEMSET_re = re.compile("loop was not vectorized: loop was transformed to memset or memcpy")
+
+# [3.4] remarks identifying dependencies present in loops 
 LOOP_PARALLEL_DEPENCENCE_re = re.compile("loop was not parallelized: existence of parallel dependence")
 LOOP_PARALLEL_NOT_CANDIDATE_re = re.compile("loop was not parallelized: not a parallelization candidate")
 LOOP_VECTOR_DEPENDENCE_re = re.compile("loop was not vectorized: vector dependence prevents vectorization")
 
-# [3.4] Remarks identifying different sorts of applied loop transformations/optimizations
+# [3.5] Remarks identifying different sorts of applied loop transformations/optimizations
 
 LOOP_NO_OPTIMIZATIONS_re = re.compile("No loop optimizations reported")
 

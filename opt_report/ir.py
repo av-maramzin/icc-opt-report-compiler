@@ -3,13 +3,13 @@
 import re
 import sys
 import logging
-from enum import Enum
+from enum import Enum, auto
 
 class Classification(Enum):
-    NO = 0
-    YES = 1
-    UNSTATED = 2
-    UNINITIALIZED = 3
+    NO = auto()
+    YES = auto()
+    UNSTATED = auto()
+    UNINITIALIZED = auto()
 
 class LoopType(Enum):
     MAIN = 0 # main loop's kernel
@@ -40,6 +40,9 @@ class LoopClassificationInfo:
         self.vector = Classification.UNINITIALIZED
         self.vector_potential = Classification.UNINITIALIZED
 
+        # loop was transformed to memset or memcpy
+        self.memset = Classification.UNINITIALIZED
+
         # loop dependence present
         self.parallel_dependence = Classification.UNINITIALIZED
         self.parallel_not_candidate = Classification.UNINITIALIZED
@@ -69,6 +72,7 @@ class LoopClassificationInfo:
         print(prefix + "parallel potential: " + self.parallel_potential.name)
         print(prefix + "vector: " + self.vector.name)
         print(prefix + "vector potential: " + self.vector_potential.name)
+        print(prefix + "memset/memcpy: " + self.memset.name)
         print(prefix + "parallel dependence: " + self.parallel_dependence.name)
         print(prefix + "parallel not candidate: " + self.parallel_not_candidate.name)
         print(prefix + "vector dependence: " + self.vector_dependence.name)
@@ -97,7 +101,10 @@ class LoopClassificationInfo:
         
         if self.vector_potential != Classification.UNINITIALIZED:
             print(prefix + "vector potential: " + self.vector_potential.name)
-        
+ 
+        if self.memset != Classification.UNINITIALIZED:
+            print(prefix + "memset/memcpy: " + self.memset.name)
+       
         if self.parallel_dependence != Classification.UNINITIALIZED:
             print(prefix + "parallel dependence: " + self.parallel_dependence.name)
 
@@ -172,6 +179,13 @@ class LoopClassificationInfo:
         else:
             if self.vector_potential != classification:
                 logging.debug('LoopClassification: => Loop(' + str(self.loop)  +') attempt to reset VECTOR POTENTIAL classification')
+
+    def set_memset(self, classification):
+        if self.memset == Classification.UNINITIALIZED:
+            self.memset = classification
+        else:
+            if self.memset != classification:
+                logging.debug('LoopClassification: => Loop(' + str(self.loop)  +') attempt to reset MEMSET classification')
 
     def set_parallel_dependence(self, classification):
         if self.parallel_dependence == Classification.UNINITIALIZED:
